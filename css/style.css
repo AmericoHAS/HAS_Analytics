@@ -478,25 +478,29 @@ section {
   color: var(--text-main);
 }
 
+/* ======================================================
+   FOTO CIRCULAR DO HERO
+====================================================== */
+
 .hero-photo-button {
-  width: 124px;
-  height: 124px;
+  width: 155px;
+  height: 155px;
 
   flex-shrink: 0;
 
   padding: 0;
-  border: 2px solid rgba(56, 189, 248, 0.32);
+  border: 2px solid rgba(56, 189, 248, 0.35);
   border-radius: 50%;
 
   background: radial-gradient(
     circle at top left,
-    rgba(56, 189, 248, 0.20),
-    rgba(15, 23, 42, 0.88)
+    rgba(56, 189, 248, 0.22),
+    rgba(15, 23, 42, 0.9)
   );
 
   box-shadow:
-    0 0 0 8px rgba(56, 189, 248, 0.05),
-    0 18px 45px rgba(0, 0, 0, 0.35);
+    0 0 0 10px rgba(56, 189, 248, 0.05),
+    0 22px 55px rgba(0, 0, 0, 0.42);
 
   overflow: hidden;
   cursor: pointer;
@@ -505,22 +509,31 @@ section {
 }
 
 .hero-photo-button:hover {
-  border-color: rgba(255, 255, 255, 0.6);
+  border-color: rgba(255, 255, 255, 0.7);
   box-shadow:
-    0 0 0 10px rgba(56, 189, 248, 0.08),
-    0 20px 55px rgba(56, 189, 248, 0.18);
+    0 0 0 12px rgba(56, 189, 248, 0.08),
+    0 24px 65px rgba(56, 189, 248, 0.22);
 }
 
+/* A imagem gira, não o botão */
 .hero-photo {
   width: 100%;
   height: 100%;
 
   object-fit: cover;
   display: block;
+
+  border-radius: 50%;
 }
 
-.hero-photo-button.girando {
-  animation: giroRapido 0.55s linear, fotoFlutuante 3.6s ease-in-out infinite;
+/* Giro ao passar o mouse */
+.hero-photo-button:hover .hero-photo {
+  animation: giroImagemRapido 0.55s linear;
+}
+
+/* Giro ao clicar */
+.hero-photo.girando {
+  animation: giroImagemRapido 0.55s linear;
 }
 
 @keyframes fotoFlutuante {
@@ -537,13 +550,13 @@ section {
   }
 }
 
-@keyframes giroRapido {
+@keyframes giroImagemRapido {
   from {
     transform: rotate(0deg) scale(1);
   }
 
   to {
-    transform: rotate(720deg) scale(1.03);
+    transform: rotate(720deg) scale(1.04);
   }
 }
 
