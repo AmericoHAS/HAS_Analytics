@@ -1,0 +1,451 @@
+/* ======================================================
+   STYLE.CSS - HAS Analytics
+   Estilo geral da página inicial
+====================================================== */
+
+/* ------------------------------
+   Variáveis gerais
+------------------------------ */
+
+:root {
+  --bg-main: #070b13;
+  --bg-secondary: #0f172a;
+  --bg-card: #111827;
+  --bg-card-soft: #162033;
+
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-soft: #cbd5e1;
+
+  --accent-blue: #38bdf8;
+  --accent-blue-dark: #0284c7;
+  --accent-gold: #d4af37;
+
+  --border-soft: rgba(148, 163, 184, 0.18);
+  --shadow-soft: 0 20px 60px rgba(0, 0, 0, 0.35);
+
+  --font-main: Arial, Helvetica, sans-serif;
+}
+
+/* ------------------------------
+   Reset básico
+------------------------------ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  background: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* ------------------------------
+   Elementos gerais
+------------------------------ */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: min(1120px, 90%);
+  margin: 0 auto;
+}
+
+/* ======================================================
+   HEADER
+====================================================== */
+
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  background: rgba(7, 11, 19, 0.82);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border-soft);
+
+  transition: 0.3s ease;
+}
+
+.header-scroll {
+  background: rgba(7, 11, 19, 0.96);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+
+.header-container {
+  height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ------------------------------
+   Logo
+------------------------------ */
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo-img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+}
+
+.logo-texto {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.logo-nome {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--text-main);
+}
+
+.logo-subtitulo {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* ------------------------------
+   Menu
+------------------------------ */
+
+.nav-menu ul {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-menu a {
+  font-size: 0.95rem;
+  color: var(--text-soft);
+  transition: 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: var(--accent-blue);
+}
+
+.nav-destaque {
+  padding: 10px 18px;
+  border-radius: 999px;
+
+  color: var(--bg-main) !important;
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-blue-dark));
+
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgba(56, 189, 248, 0.25);
+}
+
+.nav-destaque:hover {
+  transform: translateY(-2px);
+}
+
+/* ------------------------------
+   Botão menu mobile
+------------------------------ */
+
+.menu-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  margin: 5px auto;
+
+  background: var(--text-main);
+  border-radius: 999px;
+  transition: 0.3s ease;
+}
+
+/* ======================================================
+   HERO / TELA INICIAL
+====================================================== */
+
+.hero {
+  min-height: 100vh;
+  padding-top: 120px;
+
+  display: flex;
+  align-items: center;
+
+  background:
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.14), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(212, 175, 55, 0.10), transparent 35%),
+    var(--bg-main);
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 60px;
+}
+
+/* ------------------------------
+   Texto principal
+------------------------------ */
+
+.hero-content {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.hero-tag {
+  display: inline-block;
+  margin-bottom: 22px;
+  padding: 8px 16px;
+
+  border: 1px solid var(--border-soft);
+  border-radius: 999px;
+
+  color: var(--accent-blue);
+  background: rgba(56, 189, 248, 0.08);
+
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.hero h1 {
+  max-width: 760px;
+
+  font-size: clamp(2.3rem, 5vw, 4.5rem);
+  line-height: 1.08;
+  letter-spacing: -1.5px;
+
+  margin-bottom: 24px;
+}
+
+.hero-description {
+  max-width: 680px;
+
+  font-size: 1.08rem;
+  color: var(--text-soft);
+
+  margin-bottom: 34px;
+}
+
+.hero-description strong {
+  color: var(--text-main);
+}
+
+/* ------------------------------
+   Botões
+------------------------------ */
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 48px;
+  padding: 0 24px;
+
+  border-radius: 999px;
+  font-size: 0.96rem;
+  font-weight: 700;
+
+  transition: 0.3s ease;
+}
+
+.btn-primary {
+  color: var(--bg-main);
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-blue-dark));
+  box-shadow: 0 12px 30px rgba(56, 189, 248, 0.25);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(56, 189, 248, 0.34);
+}
+
+.btn-secondary {
+  color: var(--text-main);
+  border: 1px solid var(--border-soft);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+  transform: translateY(-3px);
+}
+
+/* ======================================================
+   CARD VISUAL DO HERO
+====================================================== */
+
+.hero-card {
+  opacity: 0;
+  transform: translateY(20px);
+
+  background: linear-gradient(180deg, var(--bg-card-soft), var(--bg-card));
+  border: 1px solid var(--border-soft);
+  border-radius: 24px;
+
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+.hero-card-header {
+  height: 48px;
+  padding: 0 18px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  background: rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.card-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--accent-blue);
+  opacity: 0.85;
+}
+
+.card-dot:nth-child(2) {
+  background: var(--accent-gold);
+}
+
+.card-dot:nth-child(3) {
+  background: #22c55e;
+}
+
+.hero-card-body {
+  padding: 34px;
+}
+
+.card-label {
+  margin-bottom: 10px;
+
+  color: var(--accent-gold);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-card h2 {
+  margin-bottom: 24px;
+
+  font-size: 1.55rem;
+  line-height: 1.3;
+}
+
+.hero-card ul {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.hero-card li {
+  position: relative;
+  padding-left: 24px;
+
+  color: var(--text-soft);
+  font-size: 0.98rem;
+}
+
+.hero-card li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+
+  background: var(--accent-blue);
+}
+
+/* ======================================================
+   FOOTER
+====================================================== */
+
+.footer {
+  padding: 24px 0;
+  border-top: 1px solid var(--border-soft);
+  background: var(--bg-secondary);
+}
+
+.footer-container {
+  text-align: center;
+}
+
+.footer p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ======================================================
+   ANIMAÇÕES
+====================================================== */
+
+.aparecer {
+  animation: aparecerSuave 0.9s ease forwards;
+}
+
+.hero-card.aparecer {
+  animation-delay: 0.2s;
+}
+
+@keyframes aparecerSuave {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

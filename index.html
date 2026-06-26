@@ -1,11 +1,152 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <!-- Configurações básicas da página -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Informações para navegador e mecanismos de busca -->
+  <meta 
+    name="description" 
+    content="HAS Analytics: análise de dados, Bioestatística Aplicada, modelagem estatística e consultoria acadêmica com o Prof. Me. Haward Antunny S. Américo."
+  >
+
+  <meta 
+    name="keywords" 
+    content="HAS Analytics, análise de dados, bioestatística, estatística aplicada, R, R Markdown, consultoria acadêmica, modelagem estatística"
+  >
+
+  <meta name="author" content="Prof. Me. Haward Antunny S. Américo">
+
+  <title>HAS Analytics | Análise de Dados e Bioestatística Aplicada</title>
+
+  <!-- CSS geral -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
 </head>
+
 <body>
-    
+
+  <!-- Cabeçalho do site -->
+  <header class="header">
+    <div class="container header-container">
+
+      <!-- Logo / Identidade visual -->
+      <a href="index.html" class="logo-area" aria-label="Página inicial da HAS Analytics">
+        <img 
+          src="assets/img/logo-has.png" 
+          alt="Logo HAS Analytics" 
+          class="logo-img"
+        >
+
+        <div class="logo-texto">
+          <span class="logo-nome">HAS Analytics</span>
+          <span class="logo-subtitulo">Bioestatística Aplicada</span>
+        </div>
+      </a>
+
+      <!-- Botão do menu mobile -->
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu de navegação">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Menu de navegação -->
+      <nav class="nav-menu" id="nav-menu">
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#consultoria">Consultoria</a></li>
+          <li><a href="#orcamento" class="nav-destaque">Solicitar orçamento</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main>
+
+    <!-- Tela inicial / Hero -->
+    <section class="hero" id="inicio">
+      <div class="container hero-container">
+
+        <!-- Texto principal -->
+        <div class="hero-content">
+
+          <p class="hero-tag">
+            Análise de Dados | Bioestatística Aplicada | Consultoria Acadêmica
+          </p>
+
+          <h1>
+            Transformando dados em evidências para pesquisas, artigos, dissertações e decisões científicas.
+          </h1>
+
+          <p class="hero-description">
+            Sou o <strong>Prof. Me. Haward Antunny S. Américo</strong>, licenciado em Matemática,
+            mestre e doutorando em Bioestatística. Atuo com análise de dados, modelagem estatística,
+            relatórios em R Markdown, apoio acadêmico e consultoria para pesquisas científicas.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#orcamento" class="btn btn-primary">
+              Solicitar orçamento
+            </a>
+
+            <a href="#projetos" class="btn btn-secondary">
+              Ver projetos
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Elemento visual da tela inicial -->
+        <div class="hero-card">
+
+          <div class="hero-card-header">
+            <span class="card-dot"></span>
+            <span class="card-dot"></span>
+            <span class="card-dot"></span>
+          </div>
+
+          <div class="hero-card-body">
+            <p class="card-label">HAS Analytics</p>
+
+            <h2>Consultoria em Dados e Bioestatística</h2>
+
+            <ul>
+              <li>Análise estatística em R</li>
+              <li>Modelagem estatística aplicada</li>
+              <li>Relatórios técnicos e acadêmicos</li>
+              <li>Tabelas, gráficos e interpretação</li>
+              <li>Apoio em artigos, dissertações e teses</li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé inicial simples -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <p>
+        © 2026 HAS Analytics — Prof. Me. Haward Antunny S. Américo.
+      </p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script/config/config-geral.js" defer></script>
+  <script src="script/core/menu.js" defer></script>
+  <script src="script/core/scroll.js" defer></script>
+  <script src="script/pages/home.js" defer></script>
+
 </body>
 </html>
