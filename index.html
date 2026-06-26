@@ -23,7 +23,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap"
     rel="stylesheet">
-
+  <!-- Ícones Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
@@ -40,23 +41,12 @@
       <a href="#inicio" class="logo-area" aria-label="Ir para o início">
 
         <div class="logo-icon logo-animada" id="logo-animada">
-  <img 
-    src="assets/img/logo-has.png" 
-    alt="Logo da HAS Analytics" 
-    class="logo-img logo-estatica"
-  >
+          <img src="assets/img/logo-has.png" alt="Logo da HAS Analytics" class="logo-img logo-estatica">
 
-  <video 
-    class="logo-video" 
-    id="logo-video" 
-    muted 
-    playsinline 
-    preload="auto"
-    poster="assets/img/logo-has.png"
-  >
-    <source src="assets/img/logo-has.mp4" type="video/mp4">
-  </video>
-</div>
+          <video class="logo-video" id="logo-video" muted playsinline preload="auto" poster="assets/img/logo-has.png">
+            <source src="assets/img/logo-has.mp4" type="video/mp4">
+          </video>
+        </div>
 
         <div class="logo-texto">
           <span class="logo-nome">HAS Analytics</span>
@@ -104,31 +94,27 @@
 
           <div class="hero-title-area">
 
-  <h1 class="hero-title">
-    <span class="hero-saudacao">Olá, muito prazer!</span>
-    <span class="hero-nome">Meu nome é Haward.</span>
-  </h1>
+            <h1 class="hero-title">
+              <span class="hero-saudacao">Olá, muito prazer!</span>
+              <span class="hero-nome">Meu nome é Haward.</span>
+            </h1>
 
- <button class="hero-photo-button" id="hero-photo-button" aria-label="Girar foto de Haward">
-  <div class="hero-photo-inner" id="hero-photo-inner">
+            <button class="hero-photo-button" id="hero-photo-button" aria-label="Girar foto de Haward">
+              <div class="hero-photo-inner" id="hero-photo-inner">
 
-    <div class="hero-photo-face hero-photo-front">
-      <img 
-        src="assets/img/perfil-haward.jpg" 
-        alt="Foto de Haward Antunny" 
-        class="hero-photo"
-      >
-    </div>
+                <div class="hero-photo-face hero-photo-front">
+                  <img src="assets/img/perfil-haward.jpg" alt="Foto de Haward Antunny" class="hero-photo">
+                </div>
 
-    <div class="hero-photo-face hero-photo-back">
-      <span>HAS</span>
-    </div>
+                <div class="hero-photo-face hero-photo-back">
+                  <span>HAS</span>
+                </div>
 
-  </div>
-</button>
+              </div>
+            </button>
 
 
-</div>
+          </div>
 
           <p class="hero-description">
             Sou professor de Matemática, mestre e doutorando em Bioestatística, com atuação em
@@ -521,13 +507,35 @@
         </div>
 
         <div class="contato-links">
-          <a href="#" class="antunnyamerico@gmail.com">E-mail: antunnyamerico@gmail.com </a>
-          
-          <a href="#" class="http://lattes.cnpq.br/0642206952218832">Currículo Lattes</a>
-          <a href="#" class="https://github.com/AmericoHAS">GitHub</a>
-          
-        </div>
 
+          <a href="mailto:antunnyamerico@gmail.com" class="contato-link">
+            <i class="fa-solid fa-envelope"></i>
+            <span>E-mail</span>
+          </a>
+
+          <a href="https://wa.me/5544999554888?text=Olá,%20Haward!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20análise%20de%20dados."
+            class="contato-link" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>WhatsApp</span>
+          </a>
+
+          <a href="http://lattes.cnpq.br/0642206952218832" class="contato-link" target="_blank"
+            rel="noopener noreferrer">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>Lattes</span>
+          </a>
+
+          <a href="https://github.com/AmericoHAS" class="contato-link" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-github"></i>
+            <span>GitHub</span>
+          </a>
+
+          <a href="https://orcid.org/SEU-ORCID-AQUI" class="contato-link" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-orcid"></i>
+            <span>ORCID</span>
+          </a>
+
+        </div>
       </div>
     </section>
 
