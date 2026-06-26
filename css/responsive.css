@@ -1,78 +1,17 @@
-/* ======================================================
-   RESPONSIVE.CSS - HAS Analytics
-   Ajustes para tablets e celulares
-====================================================== */
-
-/* ======================================================
-   TELAS ATÉ 1024px
-====================================================== */
-
-@media (max-width: 1024px) {
-
-  .hero-container,
-  .section-grid {
-    grid-template-columns: 1fr;
-    gap: 46px;
-  }
-
-  .hero {
-    padding-top: 125px;
-    text-align: left;
-  }
-
-  .hero-card {
-    max-width: 620px;
-  }
-
-  .cards-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .processo-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-}
-
-
-/* ======================================================
-   TELAS ATÉ 860px
-====================================================== */
-
 @media (max-width: 860px) {
 
-  /* ------------------------------
-     Header
-  ------------------------------ */
-
   .header-container {
-    height: 76px;
+    height: 74px;
   }
 
   .logo-img {
-    width: 46px;
-    height: 46px;
+    width: 40px;
+    height: 40px;
   }
 
   .logo-nome {
-    font-size: 1rem;
+    font-size: 0.92rem;
   }
-
-  .logo-subtitulo {
-    font-size: 0.7rem;
-  }
-
-  /* ------------------------------
-     Menu mobile
-  ------------------------------ */
 
   .menu-toggle {
     display: block;
@@ -81,12 +20,12 @@
 
   .nav-menu {
     position: fixed;
-    top: 76px;
+    top: 74px;
     right: -100%;
 
-    width: 78%;
+    width: 82%;
     max-width: 340px;
-    height: calc(100vh - 76px);
+    height: calc(100vh - 74px);
 
     padding: 34px 24px;
 
@@ -111,12 +50,14 @@
     font-size: 1rem;
   }
 
+  .nav-menu a::after {
+    bottom: -5px;
+  }
+
   .nav-destaque {
     display: inline-flex;
     margin-top: 10px;
   }
-
-  /* Animação do botão mobile */
 
   .menu-toggle.ativo span:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
@@ -129,231 +70,4 @@
   .menu-toggle.ativo span:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
-
-}
-
-
-/* ======================================================
-   TELAS ATÉ 768px
-====================================================== */
-
-@media (max-width: 768px) {
-
-  .container {
-    width: min(92%, 680px);
-  }
-
-  section {
-    scroll-margin-top: 82px;
-  }
-
-  .hero {
-    min-height: auto;
-    padding-top: 120px;
-    padding-bottom: 80px;
-  }
-
-  .hero h1 {
-    font-size: clamp(2.2rem, 10vw, 3.5rem);
-    letter-spacing: -1.2px;
-  }
-
-  .hero-description {
-    font-size: 1rem;
-  }
-
-  .hero-buttons {
-    align-items: stretch;
-  }
-
-  .btn {
-    width: 100%;
-  }
-
-  .section {
-    padding: 78px 0;
-  }
-
-  .section h2,
-  .section-header h2 {
-    font-size: clamp(1.8rem, 8vw, 2.5rem);
-  }
-
-  .section-header {
-    margin-bottom: 34px;
-  }
-
-  .cards-grid,
-  .services-grid,
-  .skills-grid,
-  .processo-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .portfolio-card {
-    min-height: auto;
-  }
-
-  .form-orcamento {
-    grid-template-columns: 1fr;
-    padding: 28px;
-  }
-
-  .form-group-full {
-    grid-column: auto;
-  }
-
-  .form-orcamento button {
-    grid-column: auto;
-  }
-
-}
-
-
-/* ======================================================
-   TELAS ATÉ 560px
-====================================================== */
-
-@media (max-width: 560px) {
-
-  .header-container {
-    height: 72px;
-  }
-
-  .logo-area {
-    gap: 10px;
-  }
-
-  .logo-img {
-    width: 42px;
-    height: 42px;
-  }
-
-  .logo-nome {
-    font-size: 0.95rem;
-  }
-
-  .logo-subtitulo {
-    max-width: 170px;
-    font-size: 0.66rem;
-  }
-
-  .nav-menu {
-    top: 72px;
-    width: 86%;
-    height: calc(100vh - 72px);
-  }
-
-  .hero {
-    padding-top: 112px;
-  }
-
-  .hero-tag,
-  .section-tag {
-    font-size: 0.74rem;
-    line-height: 1.4;
-  }
-
-  .hero h1 {
-    font-size: 2.35rem;
-  }
-
-  .hero-description {
-    font-size: 0.97rem;
-  }
-
-  .hero-card-body {
-    padding: 26px;
-  }
-
-  .hero-card h2 {
-    font-size: 1.35rem;
-  }
-
-  .sobre-card,
-  .skill-card,
-  .processo-item,
-  .portfolio-card {
-    padding: 24px;
-  }
-
-  .services-grid {
-    gap: 14px;
-  }
-
-  .service-item {
-    min-height: auto;
-    padding: 18px 20px;
-  }
-
-  .form-orcamento {
-    padding: 24px;
-  }
-
-  .contato-links {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .contato-link {
-    width: 100%;
-    text-align: center;
-  }
-
-}
-
-
-/* ======================================================
-   TELAS ATÉ 420px
-====================================================== */
-
-@media (max-width: 420px) {
-
-  .container {
-    width: 92%;
-  }
-
-  .logo-subtitulo {
-    display: none;
-  }
-
-  .hero h1 {
-    font-size: 2.05rem;
-  }
-
-  .hero-tag {
-    margin-bottom: 18px;
-  }
-
-  .hero-description {
-    font-size: 0.94rem;
-  }
-
-  .hero-card-body {
-    padding: 22px;
-  }
-
-  .section {
-    padding: 66px 0;
-  }
-
-  .section h2,
-  .section-header h2 {
-    font-size: 1.75rem;
-  }
-
-  .section p,
-  .section-header p {
-    font-size: 0.95rem;
-  }
-
-  .portfolio-card h3,
-  .processo-item h3 {
-    font-size: 1.05rem;
-  }
-
-  .footer p {
-    font-size: 0.8rem;
-  }
-
 }

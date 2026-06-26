@@ -122,6 +122,7 @@ section {
   align-items: center;
   justify-content: space-between;
 }
+
 /* ------------------------------
    Logo
 ------------------------------ */
@@ -133,26 +134,91 @@ section {
 }
 
 .logo-img {
-  width: 46px;
-  height: 46px;
+  width: 44px;
+  height: 44px;
   object-fit: contain;
-}
-
-.logo-texto {
-  display: flex;
-  align-items: center;
 }
 
 .logo-nome {
   color: var(--text-main);
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 800;
-  letter-spacing: 0.6px;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
 }
 
-.logo-subtitulo {
+/* Caso ainda exista no HTML antigo */
+.logo-subtitulo,
+.logo-texto {
   display: none;
+}
+
+/* ------------------------------
+   Menu
+------------------------------ */
+
+.nav-menu ul {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-menu a {
+  position: relative;
+
+  color: var(--text-soft);
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  transition: 0.25s ease;
+}
+
+.nav-menu a::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+
+  width: 0;
+  height: 2px;
+
+  background: #ffffff;
+  border-radius: 999px;
+
+  transition: width 0.25s ease;
+}
+
+.nav-menu a:hover {
+  color: var(--text-main);
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.link-ativo::after {
+  width: 100%;
+}
+
+.nav-menu a.link-ativo {
+  color: #ffffff;
+}
+
+.nav-destaque {
+  padding: 10px 18px;
+  border-radius: 999px;
+
+  color: #020617 !important;
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-blue-dark));
+
+  font-weight: 800;
+  box-shadow: 0 8px 24px rgba(56, 189, 248, 0.25);
+}
+
+.nav-destaque::after {
+  display: none;
+}
+
+.nav-destaque:hover {
+  transform: translateY(-2px);
 }
 
 /* ------------------------------

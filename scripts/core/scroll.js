@@ -1,5 +1,6 @@
 // ======================================================
-// ROLAGEM SUAVE E MENU ATIVO - HAS Analytics
+// ROLAGEM SUAVE E INDICAÇÃO DA SEÇÃO ATUAL
+// HAS Analytics
 // ======================================================
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -18,26 +19,31 @@ function ativarRolagemSuave() {
     link.addEventListener("click", function (event) {
       const idDestino = link.getAttribute("href");
 
-      if (idDestino === "#") {
+      if (!idDestino || idDestino === "#") {
         return;
       }
 
       const secaoDestino = document.querySelector(idDestino);
 
-      if (secaoDestino) {
-        event.preventDefault();
-
-        secaoDestino.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
+      if (!secaoDestino) {
+        return;
       }
+
+      event.preventDefault();
+
+      const alturaHeader = document.querySelector(".header")?.offsetHeight || 0;
+      const posicaoSecao = secaoDestino.offsetTop - alturaHeader + 2;
+
+      window.scrollTo({
+        top: posicaoSecao,
+        behavior: "smooth"
+      });
     });
   });
 }
 
 // ------------------------------------------------------
-// Destaca no menu a seção que está visível
+// Destaca no menu a seção visível na tela
 // ------------------------------------------------------
 
 function destacarSecaoAtual() {
@@ -48,14 +54,17 @@ function destacarSecaoAtual() {
     return;
   }
 
-  window.addEventListener("scroll", function () {
-    let idAtual = "";
+  function atualizarMenuAtivo() {
+    const alturaHeader = document.querySelector(".header")?.offsetHeight || 0;
+    const posicaoAtual = window.scrollY + alturaHeader + 120;
+
+    let idAtual = "inicio";
 
     secoes.forEach(function (secao) {
-      const topoSecao = secao.offsetTop - 140;
-      const alturaSecao = secao.offsetHeight;
+      const topo = secao.offsetTop;
+      const altura = secao.offsetHeight;
 
-      if (window.scrollY >= topoSecao && window.scrollY < topoSecao + alturaSecao) {
+      if (posicaoAtual >= topo && posicaoAtual < topo + altura) {
         idAtual = secao.getAttribute("id");
       }
     });
@@ -63,9 +72,16 @@ function destacarSecaoAtual() {
     linksMenu.forEach(function (link) {
       link.classList.remove("link-ativo");
 
-      if (link.getAttribute("href") === "#" + idAtual) {
+      const href = link.getAttribute("href");
+
+      if (href === "#" + idAtual) {
         link.classList.add("link-ativo");
       }
     });
-  });
+  }
+
+  window.addEventListener("scroll", atualizarMenuAtivo);
+  window.addEventListener("resize", atualizarMenuAtivo);
+
+  atualizarMenuAtivo();
 }

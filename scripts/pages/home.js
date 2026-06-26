@@ -7,10 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
   console.log("HAS Analytics carregado com sucesso.");
 
   aplicarEfeitoHeader();
-  atualizarBarraRolagem();
   validarFormularioOrcamento();
 });
-
 
 // ------------------------------------------------------
 // Efeito visual no cabeçalho ao rolar a página
@@ -23,13 +21,16 @@ function aplicarEfeitoHeader() {
     return;
   }
 
-  window.addEventListener("scroll", function () {
+  function atualizarHeader() {
     if (window.scrollY > 40) {
       header.classList.add("header-scroll");
     } else {
       header.classList.remove("header-scroll");
     }
-  });
+  }
+
+  window.addEventListener("scroll", atualizarHeader);
+  atualizarHeader();
 }
 
 // ------------------------------------------------------
@@ -94,38 +95,4 @@ function validarFormularioOrcamento() {
 
     formulario.reset();
   });
-}
-
-// ------------------------------------------------------
-// Barra de progresso da rolagem da página
-// ------------------------------------------------------
-
-function atualizarBarraRolagem() {
-  const barra = document.getElementById("scroll-progress-bar");
-
-  if (!barra) {
-    console.warn("Barra de progresso não encontrada.");
-    return;
-  }
-
-  function calcularProgresso() {
-    const alturaDocumento = document.documentElement.scrollHeight;
-    const alturaJanela = window.innerHeight;
-    const posicaoAtual = window.scrollY;
-
-    const alturaRolavel = alturaDocumento - alturaJanela;
-
-    if (alturaRolavel <= 0) {
-      barra.style.width = "0%";
-      return;
-    }
-
-    const progresso = (posicaoAtual / alturaRolavel) * 100;
-    barra.style.width = progresso + "%";
-  }
-
-  window.addEventListener("scroll", calcularProgresso);
-  window.addEventListener("resize", calcularProgresso);
-
-  calcularProgresso();
 }
