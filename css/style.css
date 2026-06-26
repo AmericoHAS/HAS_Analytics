@@ -224,9 +224,10 @@ img {
 ------------------------------ */
 
 .hero-content {
-  opacity: 0;
-  transform: translateY(20px);
+  opacity: 1;
+  transform: none;
 }
+
 
 .hero-tag {
   display: inline-block;
@@ -320,8 +321,8 @@ img {
 ====================================================== */
 
 .hero-card {
-  opacity: 0;
-  transform: translateY(20px);
+  opacity: 1;
+  transform: none;
 
   background: linear-gradient(180deg, var(--bg-card-soft), var(--bg-card));
   border: 1px solid var(--border-soft);
@@ -330,7 +331,6 @@ img {
   box-shadow: var(--shadow-soft);
   overflow: hidden;
 }
-
 .hero-card-header {
   height: 48px;
   padding: 0 18px;
