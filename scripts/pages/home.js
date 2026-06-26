@@ -135,27 +135,26 @@ function ativarLogoAnimada() {
 }
 
 // ------------------------------------------------------
-// Gira a foto do Hero ao clicar
+// Gira a foto do Hero como moeda ao clicar
 // ------------------------------------------------------
 
 function ativarFotoHero() {
-  const botaoFoto = document.getElementById("hero-photo-button");
-  const imagemFoto = document.querySelector(".hero-photo");
+  const fotoInterna = document.getElementById("hero-photo-inner");
 
-  if (!botaoFoto || !imagemFoto) {
+  if (!fotoInterna) {
     return;
   }
 
-  botaoFoto.addEventListener("click", function () {
-    imagemFoto.classList.remove("girando");
+  fotoInterna.addEventListener("click", function () {
+    fotoInterna.classList.remove("girando");
 
-    // Força o navegador a reiniciar a animação
-    void imagemFoto.offsetWidth;
+    // Reinicia a animação mesmo em cliques repetidos
+    void fotoInterna.offsetWidth;
 
-    imagemFoto.classList.add("girando");
+    fotoInterna.classList.add("girando");
 
     setTimeout(function () {
-      imagemFoto.classList.remove("girando");
-    }, 600);
+      fotoInterna.classList.remove("girando");
+    }, 1700);
   });
 }
