@@ -742,3 +742,23 @@
   }
 
 }
+
+/* ======================================================
+   PORTFÓLIO COM ROLAGEM HORIZONTAL
+====================================================== */
+
+@media (max-width: 1024px) {
+
+  .cards-grid {
+    grid-auto-columns: calc((100% - 22px) / 2);
+  }
+
+}
+
+@media (max-width: 640px) {
+
+  .cards-grid {
+    grid-auto-columns: 88%;
+  }
+
+}
