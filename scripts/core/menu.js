@@ -1,27 +1,35 @@
 // ======================================================
-// MENU MOBILE - HAS Analytics
+// MENU DE NAVEGAÇÃO - HAS Analytics
 // ======================================================
 
 document.addEventListener("DOMContentLoaded", function () {
   const botaoMenu = document.getElementById("menu-toggle");
   const menu = document.getElementById("nav-menu");
+  const linksMenu = document.querySelectorAll(".nav-menu a");
 
   if (!botaoMenu || !menu) {
     return;
   }
 
+  // Abre e fecha o menu mobile
   botaoMenu.addEventListener("click", function () {
-    menu.classList.toggle("ativo");
     botaoMenu.classList.toggle("ativo");
+    menu.classList.toggle("ativo");
   });
 
-  // Fecha o menu ao clicar em algum link
-  const linksMenu = menu.querySelectorAll("a");
-
+  // Fecha o menu ao clicar em um link
   linksMenu.forEach(function (link) {
     link.addEventListener("click", function () {
-      menu.classList.remove("ativo");
       botaoMenu.classList.remove("ativo");
+      menu.classList.remove("ativo");
     });
+  });
+
+  // Fecha o menu ao apertar ESC
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      botaoMenu.classList.remove("ativo");
+      menu.classList.remove("ativo");
+    }
   });
 });

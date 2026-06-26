@@ -1,59 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-  <!-- Configurações básicas da página -->
+  <!-- Configurações básicas -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Informações para navegador e mecanismos de busca -->
-  <meta name="description"
-    content="HAS Analytics: análise de dados, Bioestatística Aplicada, modelagem estatística e consultoria acadêmica com o Prof. Me. Haward Antunny S. Américo.">
+  <!-- SEO básico -->
+  <meta 
+    name="description" 
+    content="HAS Analytics: site profissional do Prof. Me. Haward Antunny S. Américo, com atuação em análise de dados, Bioestatística Aplicada, modelagem estatística, R Markdown e consultoria acadêmica."
+  >
 
-  <meta name="keywords"
-    content="HAS Analytics, análise de dados, bioestatística, estatística aplicada, R, R Markdown, consultoria acadêmica, modelagem estatística">
+  <meta 
+    name="keywords" 
+    content="HAS Analytics, Haward Antunny, análise de dados, bioestatística, estatística aplicada, R, R Markdown, LaTeX, consultoria acadêmica"
+  >
 
   <meta name="author" content="Prof. Me. Haward Antunny S. Américo">
 
-  <title>HAS Analytics | Análise de Dados e Bioestatística Aplicada</title>
+  <title>HAS Analytics | Prof. Me. Haward Antunny S. Américo</title>
 
-  <!-- CSS geral -->
+  <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 
 <body>
 
-  <!-- Cabeçalho do site -->
+  <!-- Cabeçalho -->
   <header class="header">
     <div class="container header-container">
 
-      <!-- Logo / Identidade visual -->
-      <a href="index.html" class="logo-area" aria-label="Página inicial da HAS Analytics">
-        <img src="assets/img/logo-has.png" alt="Logo HAS Analytics" class="logo-img">
+      <!-- Logo -->
+      <a href="#inicio" class="logo-area" aria-label="Ir para o início">
+        <img 
+          src="assets/img/logo-has.png" 
+          alt="Logo da HAS Analytics" 
+          class="logo-img"
+        >
 
         <div class="logo-texto">
           <span class="logo-nome">HAS Analytics</span>
-          <span class="logo-subtitulo">Bioestatística Aplicada</span>
+          <span class="logo-subtitulo">Dados, Bioestatística e Pesquisa</span>
         </div>
       </a>
 
-      <!-- Botão do menu mobile -->
+      <!-- Botão menu mobile -->
       <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu de navegação">
         <span></span>
         <span></span>
         <span></span>
       </button>
 
-      <!-- Menu de navegação -->
+      <!-- Menu -->
       <nav class="nav-menu" id="nav-menu">
         <ul>
-          <li><a href="#inicio">Início</a></li>
           <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#portfolio">Portfólio</a></li>
           <li><a href="#servicos">Serviços</a></li>
-          <li><a href="#projetos">Projetos</a></li>
-          <li><a href="#consultoria">Consultoria</a></li>
-          <li><a href="#orcamento" class="nav-destaque">Solicitar orçamento</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#orcamento" class="nav-destaque">Orçamento</a></li>
         </ul>
       </nav>
 
@@ -63,43 +69,44 @@
   <!-- Conteúdo principal -->
   <main>
 
-    <!-- Tela inicial / Hero -->
-    <!-- Tela inicial / Hero -->
+    <!-- Início -->
     <section class="hero" id="inicio">
       <div class="container hero-container">
 
-        <!-- Texto principal -->
         <div class="hero-content">
-
           <p class="hero-tag">
-            Análise de Dados | Bioestatística Aplicada | Consultoria Acadêmica
+            HAS Analytics | Análise de Dados e Bioestatística Aplicada
           </p>
 
           <h1>
-            Transformando dados em evidências para pesquisas, artigos, dissertações e decisões científicas.
+            Olá, muito prazer! <br>
+            Meu nome é Haward.
           </h1>
 
           <p class="hero-description">
-            Sou o <strong>Prof. Me. Haward Antunny S. Américo</strong>, licenciado em Matemática,
-            mestre e doutorando em Bioestatística. Atuo com análise de dados, modelagem estatística,
-            relatórios em R Markdown, apoio acadêmico e consultoria para pesquisas científicas.
+            Sou professor de Matemática, mestre e doutorando em Bioestatística, com atuação em
+            análise de dados, modelagem estatística, relatórios científicos e apoio a pesquisas
+            acadêmicas.
+          </p>
+
+          <p class="hero-description">
+            Por meio da <strong>HAS Analytics</strong>, desenvolvo análises estatísticas,
+            gráficos, tabelas, interpretações e relatórios em R Markdown voltados a artigos,
+            dissertações, teses e projetos científicos.
           </p>
 
           <div class="hero-buttons">
-            <a href="#orcamento" class="btn btn-primary">
+            <a href="#portfolio" class="btn btn-primary">
+              Ver portfólio
+            </a>
+
+            <a href="#orcamento" class="btn btn-secondary">
               Solicitar orçamento
             </a>
-
-            <a href="#projetos" class="btn btn-secondary">
-              Ver projetos
-            </a>
           </div>
-
         </div>
 
-        <!-- Elemento visual da tela inicial -->
         <div class="hero-card">
-
           <div class="hero-card-header">
             <span class="card-dot"></span>
             <span class="card-dot"></span>
@@ -107,19 +114,216 @@
           </div>
 
           <div class="hero-card-body">
-            <p class="card-label">HAS Analytics</p>
+            <p class="card-label">Áreas de atuação</p>
 
             <h2>
-              Consultoria em Dados e Bioestatística Aplicada
+              Dados, pesquisa e comunicação científica.
             </h2>
 
             <ul>
               <li>Análise estatística em R</li>
-              <li>Modelagem estatística aplicada</li>
-              <li>Relatórios em R Markdown</li>
-              <li>Tabelas, gráficos e interpretação</li>
+              <li>Bioestatística Aplicada</li>
+              <li>Modelagem estatística</li>
+              <li>R Markdown e LaTeX</li>
+              <li>Relatórios técnicos e acadêmicos</li>
               <li>Apoio em artigos, dissertações e teses</li>
-              <li>Planejamento amostral e análise de questionários</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Sobre -->
+    <section class="section section-sobre" id="sobre">
+      <div class="container section-grid">
+
+        <div class="section-text">
+          <p class="section-tag">Sobre mim</p>
+
+          <h2>
+            Professor, pesquisador e consultor em análise de dados.
+          </h2>
+
+          <p>
+            Sou o <strong>Prof. Me. Haward Antunny S. Américo</strong>, licenciado em Matemática,
+            mestre em Bioestatística e doutorando em Bioestatística pela Universidade Estadual
+            de Maringá.
+          </p>
+
+          <p>
+            Minha trajetória articula ensino, pesquisa e análise estatística aplicada. Tenho
+            interesse especial em Bioestatística, modelagem estatística, análise de dados,
+            programação em R, produção de relatórios em R Markdown e apoio metodológico a
+            pesquisas científicas.
+          </p>
+
+          <p>
+            Atuo auxiliando estudantes, pesquisadores e profissionais na organização, análise,
+            interpretação e apresentação de dados, sempre buscando clareza, rigor metodológico
+            e qualidade na comunicação dos resultados.
+          </p>
+        </div>
+
+        <div class="sobre-card">
+          <h3>Formação e atuação</h3>
+
+          <ul>
+            <li>Licenciado em Matemática</li>
+            <li>Mestre em Bioestatística</li>
+            <li>Doutorando em Bioestatística</li>
+            <li>Professor de Matemática</li>
+            <li>Pesquisador em Estatística Aplicada</li>
+            <li>Consultor em análise de dados acadêmicos</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Portfólio -->
+    <section class="section section-portfolio" id="portfolio">
+      <div class="container">
+
+        <div class="section-header">
+          <p class="section-tag">Portfólio</p>
+
+          <h2>
+            Projetos acadêmicos, estatísticos e educacionais.
+          </h2>
+
+          <p>
+            Alguns trabalhos e projetos desenvolvidos ou em desenvolvimento nas áreas de
+            Bioestatística, Estatística Aplicada, modelagem e educação matemática.
+          </p>
+        </div>
+
+        <div class="cards-grid">
+
+          <article class="portfolio-card">
+            <h3>Modelo espacial de captura com remoção para dengue</h3>
+            <p>
+              Pesquisa voltada à estimação de casos não notificados de dengue, com uso de
+              modelos de captura, remoção e abordagens hierárquicas aplicadas à epidemiologia.
+            </p>
+            <a href="#" class="card-link">Em breve</a>
+          </article>
+
+          <article class="portfolio-card">
+            <h3>Modelagem de gases ruminais</h3>
+            <p>
+              Aplicação de modelos não lineares e estruturas de correlação para análise de
+              produção de gases ruminais em experimentos in vitro.
+            </p>
+            <a href="#" class="card-link">Em breve</a>
+          </article>
+
+          <article class="portfolio-card">
+            <h3>Avaliação do aplicativo Passando Plantão</h3>
+            <p>
+              Apoio estatístico em pesquisa aplicada à área da saúde, com análise de questionários,
+              escalas, aceitação, usabilidade e interpretação dos resultados.
+            </p>
+            <a href="#" class="card-link">Em breve</a>
+          </article>
+
+          <article class="portfolio-card">
+            <h3>Projeto educacional Real Math</h3>
+            <p>
+              Projeto educacional voltado à criação de experiências matemáticas contextualizadas,
+              com atividades por estações, tecnologia e resolução de problemas.
+            </p>
+            <a href="#" class="card-link">Em breve</a>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Serviços -->
+    <section class="section section-servicos" id="servicos">
+      <div class="container">
+
+        <div class="section-header">
+          <p class="section-tag">Serviços</p>
+
+          <h2>
+            Apoio estatístico e acadêmico para pesquisas científicas.
+          </h2>
+
+          <p>
+            Serviços voltados a estudantes, pesquisadores, grupos de pesquisa e profissionais
+            que precisam analisar, interpretar e apresentar dados com qualidade.
+          </p>
+        </div>
+
+        <div class="services-grid">
+
+          <div class="service-item">Análise estatística</div>
+          <div class="service-item">Bioestatística Aplicada</div>
+          <div class="service-item">Modelagem estatística</div>
+          <div class="service-item">Análise de questionários</div>
+          <div class="service-item">Relatórios em R Markdown</div>
+          <div class="service-item">Tabelas e gráficos</div>
+          <div class="service-item">Apoio em artigos, dissertações e teses</div>
+          <div class="service-item">Planejamento amostral</div>
+          <div class="service-item">Consultoria para pesquisas acadêmicas</div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section section-skills" id="skills">
+      <div class="container">
+
+        <div class="section-header">
+          <p class="section-tag">Skills</p>
+
+          <h2>
+            Ferramentas e competências.
+          </h2>
+
+          <p>
+            Tecnologias, métodos e ferramentas utilizadas no desenvolvimento das análises,
+            relatórios e projetos.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+
+          <div class="skill-card">
+            <h3>Análise de dados</h3>
+            <ul>
+              <li>R</li>
+              <li>Tidyverse</li>
+              <li>ggplot2</li>
+              <li>Modelos lineares</li>
+              <li>Modelos não lineares</li>
+            </ul>
+          </div>
+
+          <div class="skill-card">
+            <h3>Bioestatística</h3>
+            <ul>
+              <li>Modelagem estatística</li>
+              <li>Análise de questionários</li>
+              <li>Dados epidemiológicos</li>
+              <li>Modelos hierárquicos</li>
+              <li>Interpretação de resultados</li>
+            </ul>
+          </div>
+
+          <div class="skill-card">
+            <h3>Relatórios e escrita</h3>
+            <ul>
+              <li>R Markdown</li>
+              <li>LaTeX</li>
+              <li>Relatórios técnicos</li>
+              <li>Relatórios acadêmicos</li>
+              <li>Apoio em artigos científicos</li>
             </ul>
           </div>
 
@@ -128,13 +332,173 @@
       </div>
     </section>
 
+    <!-- Como funciona -->
+    <section class="section section-processo" id="processo">
+      <div class="container">
+
+        <div class="section-header">
+          <p class="section-tag">Como funciona</p>
+
+          <h2>
+            Da demanda inicial à entrega dos resultados.
+          </h2>
+
+          <p>
+            O atendimento é organizado em etapas para compreender a pesquisa, os dados,
+            os objetivos e o tipo de resultado esperado.
+          </p>
+        </div>
+
+        <div class="processo-grid">
+
+          <div class="processo-item">
+            <span>01</span>
+            <h3>Envio da demanda</h3>
+            <p>Você descreve sua pesquisa, seus dados, objetivos e principais dúvidas.</p>
+          </div>
+
+          <div class="processo-item">
+            <span>02</span>
+            <h3>Avaliação inicial</h3>
+            <p>Eu avalio o tipo de análise, a organização dos dados e a viabilidade do trabalho.</p>
+          </div>
+
+          <div class="processo-item">
+            <span>03</span>
+            <h3>Proposta e orçamento</h3>
+            <p>Após compreender a demanda, envio uma proposta com escopo, prazo e valor.</p>
+          </div>
+
+          <div class="processo-item">
+            <span>04</span>
+            <h3>Análise e entrega</h3>
+            <p>Realizo a análise e entrego resultados, tabelas, gráficos e interpretação.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Orçamento -->
+    <section class="section section-orcamento" id="orcamento">
+      <div class="container section-grid">
+
+        <div class="section-text">
+          <p class="section-tag">Solicitar orçamento</p>
+
+          <h2>
+            Tem uma pesquisa ou conjunto de dados para analisar?
+          </h2>
+
+          <p>
+            Envie uma descrição da sua demanda. Você pode informar o tipo de pesquisa,
+            a área, o prazo, o objetivo da análise e quais resultados precisa obter.
+          </p>
+
+          <p>
+            Em breve, este formulário será integrado ao Google Sheets para registrar
+            automaticamente as solicitações de orçamento.
+          </p>
+        </div>
+
+        <form class="form-orcamento" id="form-orcamento">
+
+          <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome completo">
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="seuemail@email.com">
+          </div>
+
+          <div class="form-group">
+            <label for="whatsapp">WhatsApp</label>
+            <input type="text" id="whatsapp" name="whatsapp" placeholder="(00) 00000-0000">
+          </div>
+
+          <div class="form-group">
+            <label for="tipo-servico">Tipo de serviço</label>
+            <select id="tipo-servico" name="tipo-servico">
+              <option value="">Selecione uma opção</option>
+              <option value="analise-estatistica">Análise estatística</option>
+              <option value="bioestatistica">Bioestatística Aplicada</option>
+              <option value="questionarios">Análise de questionários</option>
+              <option value="rmarkdown">Relatório em R Markdown</option>
+              <option value="artigo">Apoio em artigo, dissertação ou tese</option>
+              <option value="outro">Outro</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="prazo">Prazo desejado</label>
+            <input type="text" id="prazo" name="prazo" placeholder="Ex: 15 dias, 30 dias, urgente...">
+          </div>
+
+          <div class="form-group">
+            <label for="area">Área da pesquisa</label>
+            <input type="text" id="area" name="area" placeholder="Ex: Saúde, Educação, Agrárias...">
+          </div>
+
+          <div class="form-group form-group-full">
+            <label for="descricao">Descrição da demanda</label>
+            <textarea 
+              id="descricao" 
+              name="descricao" 
+              rows="5" 
+              placeholder="Descreva brevemente sua pesquisa, os dados disponíveis e o que precisa analisar."
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">
+            Enviar solicitação
+          </button>
+
+        </form>
+
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section class="section section-contato" id="contato">
+      <div class="container">
+
+        <div class="section-header">
+          <p class="section-tag">Contato</p>
+
+          <h2>
+            Vamos conversar sobre sua pesquisa?
+          </h2>
+
+          <p>
+            Entre em contato para discutir possibilidades de análise, consultoria ou colaboração acadêmica.
+          </p>
+        </div>
+
+        <div class="contato-links">
+          <a href="#" class="contato-link">E-mail</a>
+          <a href="#" class="contato-link">WhatsApp</a>
+          <a href="#" class="contato-link">Currículo Lattes</a>
+          <a href="#" class="contato-link">GitHub</a>
+          <a href="#" class="contato-link">LinkedIn</a>
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
-  <!-- Rodapé inicial simples -->
+  <!-- Rodapé -->
   <footer class="footer">
     <div class="container footer-container">
       <p>
         © 2026 HAS Analytics — Prof. Me. Haward Antunny S. Américo.
+      </p>
+
+      <p>
+        Análise de Dados, Bioestatística Aplicada e Consultoria Acadêmica.
       </p>
     </div>
   </footer>
@@ -146,5 +510,4 @@
   <script src="script/pages/home.js" defer></script>
 
 </body>
-
 </html>

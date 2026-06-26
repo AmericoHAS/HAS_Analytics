@@ -5,14 +5,19 @@
 const CONFIG_GERAL = {
   nomeSite: "HAS Analytics",
   autor: "Prof. Me. Haward Antunny S. Américo",
-  area: "Análise de Dados e Bioestatística Aplicada",
-  ano: new Date().getFullYear(),
+  descricao: "Análise de Dados, Bioestatística Aplicada e Consultoria Acadêmica",
+  anoAtual: new Date().getFullYear(),
 
-  contato: {
+  contatos: {
     email: "",
     whatsapp: "",
-    linkedin: "",
     lattes: "",
-    github: ""
+    github: "",
+    linkedin: ""
+  },
+
+  mensagens: {
+    formularioSucesso: "Solicitação registrada com sucesso. Em breve entrarei em contato.",
+    formularioErro: "Por favor, preencha os campos obrigatórios antes de enviar."
   }
 };

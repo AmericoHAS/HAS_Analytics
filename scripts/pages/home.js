@@ -1,16 +1,17 @@
 // ======================================================
-// PÁGINA INICIAL - HAS Analytics
+// HOME - HAS Analytics
+// Página única do site
 // ======================================================
 
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("HAS Analytics - Página inicial carregada.");
+  console.log("HAS Analytics carregado com sucesso.");
 
   aplicarEfeitoHeader();
-  destacarPrimeiraSecao();
+  validarFormularioOrcamento();
 });
 
 // ------------------------------------------------------
-// Efeito no cabeçalho ao rolar a página
+// Efeito visual no cabeçalho ao rolar a página
 // ------------------------------------------------------
 
 function aplicarEfeitoHeader() {
@@ -21,7 +22,7 @@ function aplicarEfeitoHeader() {
   }
 
   window.addEventListener("scroll", function () {
-    if (window.scrollY > 50) {
+    if (window.scrollY > 40) {
       header.classList.add("header-scroll");
     } else {
       header.classList.remove("header-scroll");
@@ -30,18 +31,65 @@ function aplicarEfeitoHeader() {
 }
 
 // ------------------------------------------------------
-// Pequena animação inicial no conteúdo da página
+// Validação inicial do formulário de orçamento
+// Ainda não envia para Google Sheets
 // ------------------------------------------------------
 
-function destacarPrimeiraSecao() {
-  const heroContent = document.querySelector(".hero-content");
-  const heroCard = document.querySelector(".hero-card");
+function validarFormularioOrcamento() {
+  const formulario = document.getElementById("form-orcamento");
 
-  if (heroContent) {
-    heroContent.classList.add("aparecer");
+  if (!formulario) {
+    return;
   }
 
-  if (heroCard) {
-    heroCard.classList.add("aparecer");
-  }
+  formulario.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const nome = document.getElementById("nome");
+    const email = document.getElementById("email");
+    const whatsapp = document.getElementById("whatsapp");
+    const tipoServico = document.getElementById("tipo-servico");
+    const descricao = document.getElementById("descricao");
+
+    const camposObrigatorios = [
+      nome,
+      email,
+      whatsapp,
+      tipoServico,
+      descricao
+    ];
+
+    let formularioValido = true;
+
+    camposObrigatorios.forEach(function (campo) {
+      if (!campo.value.trim()) {
+        campo.classList.add("campo-erro");
+        formularioValido = false;
+      } else {
+        campo.classList.remove("campo-erro");
+      }
+    });
+
+    if (!formularioValido) {
+      alert("Por favor, preencha nome, e-mail, WhatsApp, tipo de serviço e descrição da demanda.");
+      return;
+    }
+
+    const dadosFormulario = {
+      nome: nome.value.trim(),
+      email: email.value.trim(),
+      whatsapp: whatsapp.value.trim(),
+      tipoServico: tipoServico.value,
+      prazo: document.getElementById("prazo").value.trim(),
+      area: document.getElementById("area").value.trim(),
+      descricao: descricao.value.trim(),
+      dataEnvio: new Date().toLocaleString("pt-BR")
+    };
+
+    console.log("Dados do formulário:", dadosFormulario);
+
+    alert("Solicitação preparada com sucesso. Em breve vamos integrar este formulário ao Google Sheets.");
+
+    formulario.reset();
+  });
 }
