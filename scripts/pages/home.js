@@ -4,12 +4,13 @@
 // ======================================================
 
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("HAS Analytics carregado com sucesso.");
+  console.log("home.js carregou corretamente.");
 
   aplicarEfeitoHeader();
   ativarFotoHero();
   validarFormularioOrcamento();
 });
+
 // ------------------------------------------------------
 // Efeito visual no cabeçalho ao rolar a página
 // ------------------------------------------------------
@@ -56,8 +57,6 @@ function validarFormularioOrcamento() {
     const area = document.getElementById("area");
     const descricao = document.getElementById("descricao");
 
-    let formularioValido = true;
-
     const camposObrigatorios = [
       nome,
       email,
@@ -66,9 +65,14 @@ function validarFormularioOrcamento() {
       descricao
     ];
 
+    let formularioValido = true;
+
     camposObrigatorios.forEach(function (campo) {
       if (!campo || !campo.value.trim()) {
-        campo.classList.add("campo-erro");
+        if (campo) {
+          campo.classList.add("campo-erro");
+        }
+
         formularioValido = false;
       } else {
         campo.classList.remove("campo-erro");
@@ -80,64 +84,34 @@ function validarFormularioOrcamento() {
       return;
     }
 
-    // TROQUE PELO SEU NÚMERO REAL
-    // Formato: 55 + DDD + número, sem espaço, sem traço e sem parênteses
+    // Seu número no formato: 55 + DDD + número
+    // Sem espaço, sem traço e sem parênteses
     const numeroHaward = "5544999554888";
 
     const tipoServicoTexto = tipoServico.options[tipoServico.selectedIndex].text;
 
-    const mensagem =
-      "Olá, Haward! Gostaria de solicitar um orçamento pela HAS Analytics.%0A%0A" +
-      "*Nome:* " + nome.value.trim() + "%0A" +
-      "*E-mail:* " + email.value.trim() + "%0A" +
-      "*WhatsApp:* " + whatsapp.value.trim() + "%0A%0A" +
-      "*Tipo de serviço:* " + tipoServicoTexto + "%0A" +
-      "*Prazo desejado:* " + (prazo.value.trim() || "Não informado") + "%0A" +
-      "*Área da pesquisa:* " + (area.value.trim() || "Não informada") + "%0A%0A" +
-      "*Descrição da demanda:*%0A" + descricao.value.trim();
+    const mensagem = `
+Olá, Haward! Gostaria de solicitar um orçamento pela HAS Analytics.
 
-    const linkWhatsApp = "https://wa.me/" + numeroHaward + "?text=" + mensagem;
+Nome: ${nome.value.trim()}
+E-mail: ${email.value.trim()}
+WhatsApp: ${whatsapp.value.trim()}
+
+Tipo de serviço: ${tipoServicoTexto}
+Prazo desejado: ${prazo.value.trim() || "Não informado"}
+Área da pesquisa: ${area.value.trim() || "Não informada"}
+
+Descrição da demanda:
+${descricao.value.trim()}
+    `;
+
+    const mensagemCodificada = encodeURIComponent(mensagem);
+
+    const linkWhatsApp = `https://wa.me/${numeroHaward}?text=${mensagemCodificada}`;
 
     console.log("Abrindo WhatsApp:", linkWhatsApp);
 
     window.location.href = linkWhatsApp;
-  });
-}
-
-
-// ------------------------------------------------------
-// Reproduz a animação da logo ao passar o mouse
-// ------------------------------------------------------
-
-function ativarLogoAnimada() {
-  const areaLogo = document.getElementById("logo-animada");
-  const videoLogo = document.getElementById("logo-video");
-
-  if (!areaLogo || !videoLogo) {
-    return;
-  }
-
-  areaLogo.addEventListener("mouseenter", function () {
-    areaLogo.classList.add("rodando");
-
-    videoLogo.pause();
-    videoLogo.currentTime = 0;
-
-    videoLogo.play().catch(function () {
-      console.log("O navegador bloqueou a reprodução automática da logo.");
-    });
-  });
-
-  areaLogo.addEventListener("mouseleave", function () {
-    videoLogo.pause();
-    videoLogo.currentTime = 0;
-
-    areaLogo.classList.remove("rodando");
-  });
-
-  videoLogo.addEventListener("ended", function () {
-    areaLogo.classList.remove("rodando");
-    videoLogo.currentTime = 0;
   });
 }
 
