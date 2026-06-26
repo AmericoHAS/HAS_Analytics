@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
   ativarFotoHero();
   validarFormularioOrcamento();
 });
-
 // ------------------------------------------------------
 // Efeito visual no cabeçalho ao rolar a página
 // ------------------------------------------------------
@@ -42,6 +41,7 @@ function validarFormularioOrcamento() {
   const formulario = document.getElementById("form-orcamento");
 
   if (!formulario) {
+    console.error("Formulário de orçamento não encontrado.");
     return;
   }
 
@@ -56,6 +56,8 @@ function validarFormularioOrcamento() {
     const area = document.getElementById("area");
     const descricao = document.getElementById("descricao");
 
+    let formularioValido = true;
+
     const camposObrigatorios = [
       nome,
       email,
@@ -64,10 +66,8 @@ function validarFormularioOrcamento() {
       descricao
     ];
 
-    let formularioValido = true;
-
     camposObrigatorios.forEach(function (campo) {
-      if (!campo.value.trim()) {
+      if (!campo || !campo.value.trim()) {
         campo.classList.add("campo-erro");
         formularioValido = false;
       } else {
@@ -80,30 +80,30 @@ function validarFormularioOrcamento() {
       return;
     }
 
+    // TROQUE PELO SEU NÚMERO REAL
+    // Formato: 55 + DDD + número, sem espaço, sem traço e sem parênteses
     const numeroHaward = "5544999554888";
 
-    const mensagem = `
-Olá, Haward! Gostaria de solicitar um orçamento pela HAS Analytics.
+    const tipoServicoTexto = tipoServico.options[tipoServico.selectedIndex].text;
 
-Nome: ${nome.value.trim()}
-E-mail: ${email.value.trim()}
-WhatsApp: ${whatsapp.value.trim()}
+    const mensagem =
+      "Olá, Haward! Gostaria de solicitar um orçamento pela HAS Analytics.%0A%0A" +
+      "*Nome:* " + nome.value.trim() + "%0A" +
+      "*E-mail:* " + email.value.trim() + "%0A" +
+      "*WhatsApp:* " + whatsapp.value.trim() + "%0A%0A" +
+      "*Tipo de serviço:* " + tipoServicoTexto + "%0A" +
+      "*Prazo desejado:* " + (prazo.value.trim() || "Não informado") + "%0A" +
+      "*Área da pesquisa:* " + (area.value.trim() || "Não informada") + "%0A%0A" +
+      "*Descrição da demanda:*%0A" + descricao.value.trim();
 
-Tipo de serviço: ${tipoServico.options[tipoServico.selectedIndex].text}
-Prazo desejado: ${prazo.value.trim() || "Não informado"}
-Área da pesquisa: ${area.value.trim() || "Não informada"}
+    const linkWhatsApp = "https://wa.me/" + numeroHaward + "?text=" + mensagem;
 
-Descrição da demanda:
-${descricao.value.trim()}
-    `;
+    console.log("Abrindo WhatsApp:", linkWhatsApp);
 
-    const mensagemCodificada = encodeURIComponent(mensagem);
-
-    const linkWhatsApp = `https://wa.me/${numeroHaward}?text=${mensagemCodificada}`;
-
-    window.open(linkWhatsApp, "_blank");
+    window.location.href = linkWhatsApp;
   });
 }
+
 
 // ------------------------------------------------------
 // Reproduz a animação da logo ao passar o mouse
