@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   console.log("HAS Analytics carregado com sucesso.");
 
   aplicarEfeitoHeader();
-  ativarLogoAnimada();
+  ativarFotoHero();
   validarFormularioOrcamento();
 });
 
@@ -131,5 +131,30 @@ function ativarLogoAnimada() {
   videoLogo.addEventListener("ended", function () {
     areaLogo.classList.remove("rodando");
     videoLogo.currentTime = 0;
+  });
+}
+
+// ------------------------------------------------------
+// Gira a foto do Hero ao clicar
+// ------------------------------------------------------
+
+function ativarFotoHero() {
+  const botaoFoto = document.getElementById("hero-photo-button");
+
+  if (!botaoFoto) {
+    return;
+  }
+
+  botaoFoto.addEventListener("click", function () {
+    botaoFoto.classList.remove("girando");
+
+    // Reinicia a animação mesmo em cliques repetidos
+    void botaoFoto.offsetWidth;
+
+    botaoFoto.classList.add("girando");
+
+    setTimeout(function () {
+      botaoFoto.classList.remove("girando");
+    }, 600);
   });
 }
