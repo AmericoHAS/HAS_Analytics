@@ -39,10 +39,24 @@
       <!-- Marca / Logo -->
       <a href="#inicio" class="logo-area" aria-label="Ir para o início">
 
-        <div class="logo-icon">
-          <img src="assets/img/logo-has.png" data-gif="assets/img/logo-has.gif" alt="Logo da HAS Analytics"
-            class="logo-img" id="logo-has">
-        </div>
+        <div class="logo-icon logo-animada" id="logo-animada">
+  <img 
+    src="assets/img/logo-has.png" 
+    alt="Logo da HAS Analytics" 
+    class="logo-img logo-estatica"
+  >
+
+  <video 
+    class="logo-video" 
+    id="logo-video" 
+    muted 
+    playsinline 
+    preload="auto"
+    poster="assets/img/logo-has.png"
+  >
+    <source src="assets/img/logo-has.mp4" type="video/mp4">
+  </video>
+</div>
 
         <div class="logo-texto">
           <span class="logo-nome">HAS Analytics</span>

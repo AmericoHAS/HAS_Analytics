@@ -99,28 +99,37 @@ function validarFormularioOrcamento() {
 }
 
 // ------------------------------------------------------
-// Troca a logo estática pelo GIF ao passar o mouse
+// Reproduz a animação da logo ao passar o mouse
 // ------------------------------------------------------
 
 function ativarLogoAnimada() {
-  const logo = document.getElementById("logo-has");
+  const areaLogo = document.getElementById("logo-animada");
+  const videoLogo = document.getElementById("logo-video");
 
-  if (!logo) {
+  if (!areaLogo || !videoLogo) {
     return;
   }
 
-  const logoEstatica = logo.getAttribute("src");
-  const logoAnimada = logo.getAttribute("data-gif");
+  areaLogo.addEventListener("mouseenter", function () {
+    areaLogo.classList.add("rodando");
 
-  if (!logoAnimada) {
-    return;
-  }
+    videoLogo.pause();
+    videoLogo.currentTime = 0;
 
-  logo.addEventListener("mouseenter", function () {
-    logo.src = logoAnimada + "?v=" + new Date().getTime();
+    videoLogo.play().catch(function () {
+      console.log("O navegador bloqueou a reprodução automática da logo.");
+    });
   });
 
-  logo.addEventListener("mouseleave", function () {
-    logo.src = logoEstatica;
+  areaLogo.addEventListener("mouseleave", function () {
+    videoLogo.pause();
+    videoLogo.currentTime = 0;
+
+    areaLogo.classList.remove("rodando");
+  });
+
+  videoLogo.addEventListener("ended", function () {
+    areaLogo.classList.remove("rodando");
+    videoLogo.currentTime = 0;
   });
 }

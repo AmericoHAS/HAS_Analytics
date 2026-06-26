@@ -159,14 +159,60 @@ section {
   transition: 0.3s ease;
 }
 
-.logo-img {
+.logo-icon {
+  width: 52px;
+  height: 52px;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 16px;
+  background: radial-gradient(
+    circle at top left,
+    rgba(56, 189, 248, 0.22),
+    rgba(15, 23, 42, 0.75)
+  );
+
+  border: 1px solid rgba(56, 189, 248, 0.28);
+  box-shadow: 0 0 22px rgba(56, 189, 248, 0.12);
+
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.logo-img,
+.logo-video {
   width: 40px;
   height: 40px;
 
   object-fit: contain;
   display: block;
+}
 
-  transition: transform 0.5s ease;
+.logo-video {
+  position: absolute;
+  inset: 50%;
+  transform: translate(-50%, -50%);
+
+  opacity: 0;
+  pointer-events: none;
+}
+
+.logo-estatica {
+  opacity: 1;
+}
+
+.logo-animada.rodando .logo-estatica {
+  opacity: 0;
+}
+
+.logo-animada.rodando .logo-video {
+  opacity: 1;
 }
 
 .logo-area:hover .logo-icon {
@@ -174,9 +220,8 @@ section {
   box-shadow: 0 0 28px rgba(56, 189, 248, 0.24);
 }
 
-.logo-area:hover .logo-img {
-  transform: scale(1.06);
-}
+
+
 
 .logo-texto {
   display: flex;
