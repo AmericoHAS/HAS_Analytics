@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <!-- Configurações básicas -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO básico -->
-  <meta 
-    name="description" 
-    content="HAS Analytics: site profissional do Prof. Me. Haward Antunny S. Américo, com atuação em análise de dados, Bioestatística Aplicada, modelagem estatística, R Markdown e consultoria acadêmica."
-  >
+  <meta name="description"
+    content="HAS Analytics: site profissional do Prof. Me. Haward Antunny S. Américo, com atuação em análise de dados, Bioestatística Aplicada, modelagem estatística, R Markdown e consultoria acadêmica.">
 
-  <meta 
-    name="keywords" 
-    content="HAS Analytics, Haward Antunny, análise de dados, bioestatística, estatística aplicada, R, R Markdown, LaTeX, consultoria acadêmica"
-  >
+  <meta name="keywords"
+    content="HAS Analytics, Haward Antunny, análise de dados, bioestatística, estatística aplicada, R, R Markdown, LaTeX, consultoria acadêmica">
 
   <meta name="author" content="Prof. Me. Haward Antunny S. Américo">
 
@@ -33,11 +30,7 @@
 
       <!-- Logo -->
       <a href="#inicio" class="logo-area" aria-label="Ir para o início">
-        <img 
-          src="assets/img/logo-has.png" 
-          alt="Logo da HAS Analytics" 
-          class="logo-img"
-        >
+        <img src="assets/img/logo-has.png" alt="Logo da HAS Analytics" class="logo-img">
 
         <div class="logo-texto">
           <span class="logo-nome">HAS Analytics</span>
@@ -64,8 +57,12 @@
       </nav>
 
     </div>
-  </header>
 
+    <!-- Barra de progresso da rolagem -->
+    <div class="scroll-progress">
+      <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
+    </div>
+  </header>
   <!-- Conteúdo principal -->
   <main>
 
@@ -444,12 +441,8 @@
 
           <div class="form-group form-group-full">
             <label for="descricao">Descrição da demanda</label>
-            <textarea 
-              id="descricao" 
-              name="descricao" 
-              rows="5" 
-              placeholder="Descreva brevemente sua pesquisa, os dados disponíveis e o que precisa analisar."
-            ></textarea>
+            <textarea id="descricao" name="descricao" rows="5"
+              placeholder="Descreva brevemente sua pesquisa, os dados disponíveis e o que precisa analisar."></textarea>
           </div>
 
           <button type="submit" class="btn btn-primary">
@@ -510,4 +503,5 @@
   <script src="script/pages/home.js" defer></script>
 
 </body>
+
 </html>

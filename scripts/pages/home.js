@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   console.log("HAS Analytics carregado com sucesso.");
 
   aplicarEfeitoHeader();
+  atualizarBarraRolagem();
   validarFormularioOrcamento();
 });
 
@@ -91,5 +92,26 @@ function validarFormularioOrcamento() {
     alert("Solicitação preparada com sucesso. Em breve vamos integrar este formulário ao Google Sheets.");
 
     formulario.reset();
+  });
+}
+
+// ------------------------------------------------------
+// Barra de progresso da rolagem da página
+// ------------------------------------------------------
+
+function atualizarBarraRolagem() {
+  const barra = document.getElementById("scroll-progress-bar");
+
+  if (!barra) {
+    return;
+  }
+
+  window.addEventListener("scroll", function () {
+    const alturaTotal = document.documentElement.scrollHeight - window.innerHeight;
+    const posicaoAtual = window.scrollY;
+
+    const progresso = (posicaoAtual / alturaTotal) * 100;
+
+    barra.style.width = progresso + "%";
   });
 }
