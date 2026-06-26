@@ -695,12 +695,12 @@
 
   .hero-title-area {
     align-items: flex-start;
-    gap: 20px;
+    gap: 22px;
   }
 
   .hero-photo-button {
-    width: 96px;
-    height: 96px;
+    width: 125px;
+    height: 125px;
   }
 
   .hero-saudacao {
@@ -723,8 +723,8 @@
   }
 
   .hero-photo-button {
-    width: 88px;
-    height: 88px;
+    width: 110px;
+    height: 110px;
   }
 
 }
@@ -737,8 +737,8 @@
   }
 
   .hero-photo-button {
-    width: 78px;
-    height: 78px;
+    width: 96px;
+    height: 96px;
   }
 
-}   
+}

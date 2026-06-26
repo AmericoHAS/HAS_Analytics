@@ -140,21 +140,22 @@ function ativarLogoAnimada() {
 
 function ativarFotoHero() {
   const botaoFoto = document.getElementById("hero-photo-button");
+  const imagemFoto = document.querySelector(".hero-photo");
 
-  if (!botaoFoto) {
+  if (!botaoFoto || !imagemFoto) {
     return;
   }
 
   botaoFoto.addEventListener("click", function () {
-    botaoFoto.classList.remove("girando");
+    imagemFoto.classList.remove("girando");
 
-    // Reinicia a animação mesmo em cliques repetidos
-    void botaoFoto.offsetWidth;
+    // Força o navegador a reiniciar a animação
+    void imagemFoto.offsetWidth;
 
-    botaoFoto.classList.add("girando");
+    imagemFoto.classList.add("girando");
 
     setTimeout(function () {
-      botaoFoto.classList.remove("girando");
+      imagemFoto.classList.remove("girando");
     }, 600);
   });
 }
