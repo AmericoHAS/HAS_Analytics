@@ -35,8 +35,7 @@ function aplicarEfeitoHeader() {
 }
 
 // ------------------------------------------------------
-// Validação inicial do formulário de orçamento
-// Ainda não envia para Google Sheets
+// Envio do formulário pelo WhatsApp
 // ------------------------------------------------------
 
 function validarFormularioOrcamento() {
@@ -53,6 +52,8 @@ function validarFormularioOrcamento() {
     const email = document.getElementById("email");
     const whatsapp = document.getElementById("whatsapp");
     const tipoServico = document.getElementById("tipo-servico");
+    const prazo = document.getElementById("prazo");
+    const area = document.getElementById("area");
     const descricao = document.getElementById("descricao");
 
     const camposObrigatorios = [
@@ -79,22 +80,28 @@ function validarFormularioOrcamento() {
       return;
     }
 
-    const dadosFormulario = {
-      nome: nome.value.trim(),
-      email: email.value.trim(),
-      whatsapp: whatsapp.value.trim(),
-      tipoServico: tipoServico.value,
-      prazo: document.getElementById("prazo").value.trim(),
-      area: document.getElementById("area").value.trim(),
-      descricao: descricao.value.trim(),
-      dataEnvio: new Date().toLocaleString("pt-BR")
-    };
+    const numeroHaward = "5544999554888";
 
-    console.log("Dados do formulário:", dadosFormulario);
+    const mensagem = `
+Olá, Haward! Gostaria de solicitar um orçamento pela HAS Analytics.
 
-    alert("Solicitação preparada com sucesso. Em breve vamos integrar este formulário ao Google Sheets.");
+Nome: ${nome.value.trim()}
+E-mail: ${email.value.trim()}
+WhatsApp: ${whatsapp.value.trim()}
 
-    formulario.reset();
+Tipo de serviço: ${tipoServico.options[tipoServico.selectedIndex].text}
+Prazo desejado: ${prazo.value.trim() || "Não informado"}
+Área da pesquisa: ${area.value.trim() || "Não informada"}
+
+Descrição da demanda:
+${descricao.value.trim()}
+    `;
+
+    const mensagemCodificada = encodeURIComponent(mensagem);
+
+    const linkWhatsApp = `https://wa.me/${numeroHaward}?text=${mensagemCodificada}`;
+
+    window.open(linkWhatsApp, "_blank");
   });
 }
 
