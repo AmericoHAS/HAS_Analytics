@@ -495,3 +495,195 @@
   }
 
 }
+
+/* ======================================================
+   AJUSTE FINAL DO CABEÇALHO RESPONSIVO
+====================================================== */
+
+@media (max-width: 1100px) {
+
+  .nav-menu ul {
+    gap: 18px;
+  }
+
+  .nav-menu a {
+    font-size: 0.84rem;
+  }
+
+  .logo-nome {
+    font-size: 1.06rem;
+  }
+
+  .logo-subtitulo {
+    font-size: 0.58rem;
+  }
+
+}
+
+
+@media (max-width: 940px) {
+
+  .header-container {
+    height: 76px;
+  }
+
+  .logo-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+  }
+
+  .logo-img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .logo-nome {
+    font-size: 1rem;
+  }
+
+  .logo-subtitulo {
+    font-size: 0.55rem;
+    letter-spacing: 0.55px;
+  }
+
+  .menu-toggle {
+    display: block;
+    z-index: 1100;
+  }
+
+  .menu-toggle.ativo span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .menu-toggle.ativo span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.ativo span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 76px;
+    right: -100%;
+
+    width: 82%;
+    max-width: 360px;
+    height: calc(100vh - 76px);
+
+    padding: 34px 26px;
+
+    background: rgba(7, 11, 19, 0.98);
+    border-left: 1px solid var(--border-soft);
+    box-shadow: -12px 0 40px rgba(0, 0, 0, 0.38);
+
+    transition: right 0.35s ease;
+  }
+
+  .nav-menu.ativo {
+    right: 0;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+  }
+
+  .nav-menu a {
+    font-size: 1rem;
+  }
+
+  .nav-menu a::after {
+    bottom: -5px;
+  }
+
+  .nav-destaque {
+    display: inline-flex;
+    margin-top: 8px;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .header-container {
+    height: 72px;
+  }
+
+  .logo-area {
+    gap: 10px;
+  }
+
+  .logo-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 13px;
+  }
+
+  .logo-img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .logo-nome {
+    font-size: 0.92rem;
+  }
+
+  .logo-subtitulo {
+    max-width: 200px;
+    font-size: 0.51rem;
+    letter-spacing: 0.4px;
+  }
+
+  .nav-menu {
+    top: 72px;
+    width: 86%;
+    height: calc(100vh - 72px);
+  }
+
+}
+
+
+@media (max-width: 460px) {
+
+  .logo-subtitulo {
+    display: none;
+  }
+
+  .logo-nome {
+    font-size: 0.9rem;
+  }
+
+}
+
+
+@media (max-width: 360px) {
+
+  .logo-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .logo-img {
+    width: 29px;
+    height: 29px;
+  }
+
+  .logo-nome {
+    font-size: 0.82rem;
+  }
+
+  .menu-toggle {
+    width: 38px;
+    height: 38px;
+  }
+
+  .menu-toggle span {
+    width: 25px;
+  }
+
+}
