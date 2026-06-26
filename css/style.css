@@ -122,7 +122,6 @@ section {
   align-items: center;
   justify-content: space-between;
 }
-
 /* ------------------------------
    Logo
 ------------------------------ */
@@ -130,31 +129,30 @@ section {
 .logo-area {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
 }
 
 .logo-img {
-  width: 52px;
-  height: 52px;
+  width: 46px;
+  height: 46px;
   object-fit: contain;
 }
 
 .logo-texto {
   display: flex;
-  flex-direction: column;
-  line-height: 1.2;
+  align-items: center;
 }
 
 .logo-nome {
   color: var(--text-main);
-  font-size: 1.08rem;
+  font-size: 1.05rem;
   font-weight: 800;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
 }
 
 .logo-subtitulo {
-  color: var(--text-muted);
-  font-size: 0.75rem;
+  display: none;
 }
 
 /* ------------------------------
@@ -981,14 +979,14 @@ section {
 ====================================================== */
 
 .scroll-progress {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
   width: 100%;
   height: 3px;
 
-  background: rgba(255, 255, 255, 0.08);
-
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  background: transparent;
 }
 
 .scroll-progress-bar {
@@ -996,7 +994,7 @@ section {
   height: 100%;
 
   background: #ffffff;
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.65);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
 
-  transition: width 0.08s linear;
+  transition: width 0.05s linear;
 }

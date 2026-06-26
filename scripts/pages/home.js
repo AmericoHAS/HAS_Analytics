@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
   validarFormularioOrcamento();
 });
 
+
 // ------------------------------------------------------
 // Efeito visual no cabeçalho ao rolar a página
 // ------------------------------------------------------
@@ -103,15 +104,28 @@ function atualizarBarraRolagem() {
   const barra = document.getElementById("scroll-progress-bar");
 
   if (!barra) {
+    console.warn("Barra de progresso não encontrada.");
     return;
   }
 
-  window.addEventListener("scroll", function () {
-    const alturaTotal = document.documentElement.scrollHeight - window.innerHeight;
+  function calcularProgresso() {
+    const alturaDocumento = document.documentElement.scrollHeight;
+    const alturaJanela = window.innerHeight;
     const posicaoAtual = window.scrollY;
 
-    const progresso = (posicaoAtual / alturaTotal) * 100;
+    const alturaRolavel = alturaDocumento - alturaJanela;
 
+    if (alturaRolavel <= 0) {
+      barra.style.width = "0%";
+      return;
+    }
+
+    const progresso = (posicaoAtual / alturaRolavel) * 100;
     barra.style.width = progresso + "%";
-  });
+  }
+
+  window.addEventListener("scroll", calcularProgresso);
+  window.addEventListener("resize", calcularProgresso);
+
+  calcularProgresso();
 }
