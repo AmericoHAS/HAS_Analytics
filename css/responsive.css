@@ -1,39 +1,163 @@
-@media (max-width: 860px) {
+/* ======================================================
+   RESPONSIVE.CSS - HAS Analytics
+   Ajustes responsivos para tablets e celulares
+====================================================== */
 
-  .header-container {
-    height: 74px;
+
+/* ======================================================
+   TELAS ATÉ 1180px
+====================================================== */
+
+@media (max-width: 1180px) {
+
+  .nav-menu ul {
+    gap: 20px;
   }
 
-  .logo-img {
-    width: 40px;
-    height: 40px;
+  .nav-menu a {
+    font-size: 0.86rem;
   }
 
   .logo-nome {
-    font-size: 0.92rem;
+    font-size: 1.05rem;
   }
+
+  .logo-subtitulo {
+    font-size: 0.62rem;
+  }
+
+}
+
+
+/* ======================================================
+   TELAS ATÉ 1024px
+====================================================== */
+
+@media (max-width: 1024px) {
+
+  .hero-container,
+  .section-grid {
+    grid-template-columns: 1fr;
+    gap: 46px;
+  }
+
+  .hero {
+    padding-top: 125px;
+    text-align: left;
+  }
+
+  .hero-card {
+    max-width: 620px;
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .processo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+/* ======================================================
+   TELAS ATÉ 900px
+   Aqui o menu vira menu lateral/mobile
+====================================================== */
+
+@media (max-width: 900px) {
+
+  /* ------------------------------
+     Header
+  ------------------------------ */
+
+  .header-container {
+    height: 76px;
+  }
+
+  /* ------------------------------
+     Logo
+  ------------------------------ */
+
+  .logo-area {
+    gap: 12px;
+  }
+
+  .logo-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+  }
+
+  .logo-img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .logo-texto {
+    line-height: 1.05;
+  }
+
+  .logo-nome {
+    font-size: 1rem;
+  }
+
+  .logo-subtitulo {
+    margin-top: 4px;
+    font-size: 0.58rem;
+    letter-spacing: 0.55px;
+  }
+
+  /* ------------------------------
+     Botão menu mobile
+  ------------------------------ */
 
   .menu-toggle {
     display: block;
     z-index: 1100;
   }
 
+  .menu-toggle.ativo span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .menu-toggle.ativo span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.ativo span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* ------------------------------
+     Menu lateral
+  ------------------------------ */
+
   .nav-menu {
     position: fixed;
-    top: 74px;
+    top: 76px;
     right: -100%;
 
     width: 82%;
-    max-width: 340px;
-    height: calc(100vh - 74px);
+    max-width: 360px;
+    height: calc(100vh - 76px);
 
-    padding: 34px 24px;
+    padding: 34px 26px;
 
     background: rgba(7, 11, 19, 0.98);
     border-left: 1px solid var(--border-soft);
-    box-shadow: -12px 0 40px rgba(0, 0, 0, 0.35);
+    box-shadow: -12px 0 40px rgba(0, 0, 0, 0.38);
 
-    transition: 0.35s ease;
+    transition: right 0.35s ease;
   }
 
   .nav-menu.ativo {
@@ -59,15 +183,315 @@
     margin-top: 10px;
   }
 
-  .menu-toggle.ativo span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
+}
+
+
+/* ======================================================
+   TELAS ATÉ 768px
+====================================================== */
+
+@media (max-width: 768px) {
+
+  .container {
+    width: min(92%, 680px);
   }
 
-  .menu-toggle.ativo span:nth-child(2) {
-    opacity: 0;
+  section {
+    scroll-margin-top: 82px;
   }
 
-  .menu-toggle.ativo span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
+  /* ------------------------------
+     Hero
+  ------------------------------ */
+
+  .hero {
+    min-height: auto;
+    padding-top: 118px;
+    padding-bottom: 80px;
   }
+
+  .hero h1 {
+    font-size: clamp(2.15rem, 10vw, 3.4rem);
+    letter-spacing: -1.2px;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    align-items: stretch;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  /* ------------------------------
+     Seções
+  ------------------------------ */
+
+  .section {
+    padding: 78px 0;
+  }
+
+  .section h2,
+  .section-header h2 {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+  }
+
+  .section-header {
+    margin-bottom: 34px;
+  }
+
+  .cards-grid,
+  .services-grid,
+  .skills-grid,
+  .processo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-card {
+    min-height: auto;
+  }
+
+  /* ------------------------------
+     Formulário
+  ------------------------------ */
+
+  .form-orcamento {
+    grid-template-columns: 1fr;
+    padding: 28px;
+  }
+
+  .form-group-full {
+    grid-column: auto;
+  }
+
+  .form-orcamento button {
+    grid-column: auto;
+  }
+
+}
+
+
+/* ======================================================
+   TELAS ATÉ 600px
+====================================================== */
+
+@media (max-width: 600px) {
+
+  /* ------------------------------
+     Header
+  ------------------------------ */
+
+  .header-container {
+    height: 72px;
+  }
+
+  .logo-area {
+    gap: 10px;
+  }
+
+  .logo-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 13px;
+  }
+
+  .logo-img {
+    width: 33px;
+    height: 33px;
+  }
+
+  .logo-nome {
+    font-size: 0.94rem;
+  }
+
+  .logo-subtitulo {
+    max-width: 210px;
+    font-size: 0.54rem;
+    letter-spacing: 0.45px;
+  }
+
+  .nav-menu {
+    top: 72px;
+    width: 86%;
+    height: calc(100vh - 72px);
+  }
+
+  /* ------------------------------
+     Hero
+  ------------------------------ */
+
+  .hero {
+    padding-top: 112px;
+  }
+
+  .hero-tag,
+  .section-tag {
+    font-size: 0.74rem;
+    line-height: 1.4;
+  }
+
+  .hero h1 {
+    font-size: 2.35rem;
+  }
+
+  .hero-description {
+    font-size: 0.97rem;
+  }
+
+  .hero-card-body {
+    padding: 26px;
+  }
+
+  .hero-card h2 {
+    font-size: 1.35rem;
+  }
+
+  /* ------------------------------
+     Cards
+  ------------------------------ */
+
+  .sobre-card,
+  .skill-card,
+  .processo-item,
+  .portfolio-card {
+    padding: 24px;
+  }
+
+  .services-grid {
+    gap: 14px;
+  }
+
+  .service-item {
+    min-height: auto;
+    padding: 18px 20px;
+  }
+
+  /* ------------------------------
+     Formulário
+  ------------------------------ */
+
+  .form-orcamento {
+    padding: 24px;
+  }
+
+  /* ------------------------------
+     Contato
+  ------------------------------ */
+
+  .contato-links {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contato-link {
+    width: 100%;
+    text-align: center;
+  }
+
+}
+
+
+/* ======================================================
+   TELAS ATÉ 480px
+====================================================== */
+
+@media (max-width: 480px) {
+
+  .container {
+    width: 92%;
+  }
+
+  .logo-subtitulo {
+    display: none;
+  }
+
+  .logo-nome {
+    font-size: 0.92rem;
+  }
+
+  .hero h1 {
+    font-size: 2.1rem;
+  }
+
+  .hero-tag {
+    margin-bottom: 18px;
+  }
+
+  .hero-description {
+    font-size: 0.94rem;
+  }
+
+  .hero-card-body {
+    padding: 22px;
+  }
+
+  .section {
+    padding: 66px 0;
+  }
+
+  .section h2,
+  .section-header h2 {
+    font-size: 1.75rem;
+  }
+
+  .section p,
+  .section-header p {
+    font-size: 0.95rem;
+  }
+
+  .portfolio-card h3,
+  .processo-item h3 {
+    font-size: 1.05rem;
+  }
+
+  .footer p {
+    font-size: 0.8rem;
+  }
+
+}
+
+
+/* ======================================================
+   TELAS ATÉ 380px
+====================================================== */
+
+@media (max-width: 380px) {
+
+  .logo-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .logo-img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .logo-nome {
+    font-size: 0.84rem;
+    letter-spacing: 0.4px;
+  }
+
+  .menu-toggle {
+    width: 38px;
+    height: 38px;
+  }
+
+  .menu-toggle span {
+    width: 25px;
+  }
+
+  .hero h1 {
+    font-size: 1.95rem;
+  }
+
+  .btn {
+    min-height: 46px;
+    font-size: 0.9rem;
+  }
+
 }

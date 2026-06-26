@@ -33,7 +33,7 @@
   --radius-medium: 18px;
   --radius-large: 28px;
 
-  --font-main: Arial, Helvetica, sans-serif;
+  --font-main: "Inter", Arial, Helvetica, sans-serif;
 }
 
 /* ------------------------------
@@ -124,137 +124,81 @@ section {
 }
 
 /* ------------------------------
-   Logo
+   Logo / Marca
 ------------------------------ */
 
 .logo-area {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
+
+  min-width: fit-content;
+}
+
+.logo-icon {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 16px;
+  background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.22), rgba(15, 23, 42, 0.65));
+  border: 1px solid rgba(56, 189, 248, 0.28);
+
+  box-shadow: 0 0 22px rgba(56, 189, 248, 0.12);
+
+  overflow: hidden;
+  transition: 0.3s ease;
 }
 
 .logo-img {
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
   object-fit: contain;
+
+  transition: transform 0.6s ease;
+}
+
+.logo-area:hover .logo-icon {
+  border-color: rgba(255, 255, 255, 0.42);
+  box-shadow: 0 0 26px rgba(56, 189, 248, 0.24);
+}
+
+.logo-area:hover .logo-img {
+  transform: rotate(360deg) scale(1.04);
+}
+
+.logo-texto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  line-height: 1.05;
 }
 
 .logo-nome {
-  color: var(--text-main);
-  font-size: 1rem;
+  font-family: "Sora", "Inter", Arial, Helvetica, sans-serif;
+
+  font-size: 1.18rem;
   font-weight: 800;
-  letter-spacing: 0.8px;
-  text-transform: uppercase;
+  letter-spacing: 0.4px;
+
+  color: transparent;
+  background: linear-gradient(135deg, #ffffff 0%, #38bdf8 55%, #d4af37 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 
-/* Caso ainda exista no HTML antigo */
-.logo-subtitulo,
-.logo-texto {
-  display: none;
-}
+.logo-subtitulo {
+  margin-top: 5px;
 
-/* ------------------------------
-   Menu
------------------------------- */
-
-.nav-menu ul {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-
-.nav-menu a {
-  position: relative;
-
-  color: var(--text-soft);
-  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-size: 0.68rem;
   font-weight: 600;
-
-  transition: 0.25s ease;
-}
-
-.nav-menu a::after {
-  content: "";
-
-  position: absolute;
-  left: 0;
-  bottom: -8px;
-
-  width: 0;
-  height: 2px;
-
-  background: #ffffff;
-  border-radius: 999px;
-
-  transition: width 0.25s ease;
-}
-
-.nav-menu a:hover {
-  color: var(--text-main);
-}
-
-.nav-menu a:hover::after,
-.nav-menu a.link-ativo::after {
-  width: 100%;
-}
-
-.nav-menu a.link-ativo {
-  color: #ffffff;
-}
-
-.nav-destaque {
-  padding: 10px 18px;
-  border-radius: 999px;
-
-  color: #020617 !important;
-  background: linear-gradient(135deg, var(--accent-blue), var(--accent-blue-dark));
-
-  font-weight: 800;
-  box-shadow: 0 8px 24px rgba(56, 189, 248, 0.25);
-}
-
-.nav-destaque::after {
-  display: none;
-}
-
-.nav-destaque:hover {
-  transform: translateY(-2px);
-}
-
-/* ------------------------------
-   Menu
------------------------------- */
-
-.nav-menu ul {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-}
-
-.nav-menu a {
-  color: var(--text-soft);
-  font-size: 0.95rem;
-  font-weight: 500;
-  transition: 0.25s ease;
-}
-
-.nav-menu a:hover {
-  color: var(--accent-blue);
-}
-
-.nav-destaque {
-  padding: 10px 18px;
-  border-radius: 999px;
-
-  color: #020617 !important;
-  background: linear-gradient(135deg, var(--accent-blue), var(--accent-blue-dark));
-
-  font-weight: 800;
-  box-shadow: 0 8px 24px rgba(56, 189, 248, 0.25);
-}
-
-.nav-destaque:hover {
-  transform: translateY(-2px);
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
 }
 
 /* ------------------------------

@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   console.log("HAS Analytics carregado com sucesso.");
 
   aplicarEfeitoHeader();
+  ativarLogoAnimada();
   validarFormularioOrcamento();
 });
 
@@ -94,5 +95,32 @@ function validarFormularioOrcamento() {
     alert("Solicitação preparada com sucesso. Em breve vamos integrar este formulário ao Google Sheets.");
 
     formulario.reset();
+  });
+}
+
+// ------------------------------------------------------
+// Troca a logo estática pelo GIF ao passar o mouse
+// ------------------------------------------------------
+
+function ativarLogoAnimada() {
+  const logo = document.getElementById("logo-has");
+
+  if (!logo) {
+    return;
+  }
+
+  const logoEstatica = logo.getAttribute("src");
+  const logoAnimada = logo.getAttribute("data-gif");
+
+  if (!logoAnimada) {
+    return;
+  }
+
+  logo.addEventListener("mouseenter", function () {
+    logo.src = logoAnimada + "?v=" + new Date().getTime();
+  });
+
+  logo.addEventListener("mouseleave", function () {
+    logo.src = logoEstatica;
   });
 }
