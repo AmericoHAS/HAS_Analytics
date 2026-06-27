@@ -565,3 +565,33 @@
     -6px 6px 14px rgba(0, 0, 0, 0.15),
     inset 0 0 0 1px rgba(255, 255, 255, 0.6);
 }
+
+/* ======================================================
+   CORREÇÃO: BOTÃO SEMPRE VISÍVEL NOS CARDS
+====================================================== */
+
+.portfolio-front-content {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.portfolio-front-content h3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+.portfolio-front-content > p:not(.portfolio-categoria) {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+.portfolio-front-content .portfolio-flip-btn {
+  margin-top: auto;
+  flex-shrink: 0;
+}

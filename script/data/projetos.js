@@ -145,4 +145,63 @@ window.PROJETOS = [
   link: "https://ampllaeditora.com.br/books/2025/08/EstudosPropostasMatematica.pdf",
   textoLink: "Acessar capítulo"
 },
+
+{
+  titulo: "Caçada Trigonométrica",
+  categoria: "Educação Matemática | Projeto Web",
+  grupo: "projetos-web",
+  data: "2026",
+  status: "Jogo web educativo",
+  tipo: "Projeto web",
+
+  imagem: "assets/img/portfolio/cacada.png",
+
+  descricao:
+    "Jogo web educativo para estudantes do 3º ano do Ensino Médio, desenvolvido como uma caça ao tesouro por estações para revisar seno, cosseno, tangente, Teorema de Pitágoras e relações métricas no triângulo retângulo.",
+
+  detalhes:
+    "O projeto propõe uma dinâmica interativa em que o mapa apresenta estações distribuídas pelo espaço escolar. Ao selecionar uma estação, a equipe resolve um desafio matemático e, ao acertar, recebe uma pista para avançar. A proposta articula resolução de problemas, colaboração, estratégia, estimativas, validação de resultados e gestão do tempo, podendo incluir pontuação, cronômetro e acompanhamento do progresso pelo professor.",
+
+  tecnologias: [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Educação Matemática",
+    "Trigonometria",
+    "Gamificação"
+  ],
+
+  link: "https://github.com/HawardAntunny/Cacada-Trigonometrica",
+  textoLink: "Acessar projeto"
+},
+
+{
+  titulo: "Sistema de controle para Lava Car",
+  categoria: "Projeto Web | Gestão de Serviços",
+  grupo: "projetos-web",
+  data: "2026",
+  status: "Sistema web funcional",
+  tipo: "Projeto web",
+
+  imagem: "assets/img/portfolio/lava-car.png",
+
+  descricao:
+    "Sistema web desenvolvido para auxiliar no controle de serviços de um lava car, organizando informações de atendimentos, veículos, valores e acompanhamento das atividades realizadas.",
+
+  detalhes:
+    "O projeto foi criado com foco em uma demanda prática de gestão familiar, buscando facilitar o registro e a organização dos serviços prestados. A proposta permitiu aplicar conceitos de programação web, estruturação de dados, interface simples e controle operacional em um contexto real de uso.",
+
+  tecnologias: [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Gestão de serviços",
+    "Projeto web",
+    "Aplicação prática"
+  ],
+
+  link: "https://controle-lava-car.vercel.app/",
+  textoLink: "Acessar projeto"
+},
+
 ];
