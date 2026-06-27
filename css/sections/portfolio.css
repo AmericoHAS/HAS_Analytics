@@ -498,3 +498,70 @@
     0 14px 30px rgba(0, 0, 0, 0.28),
     0 0 0 8px rgba(255, 255, 255, 0.10);
 }
+
+/* ======================================================
+   MINI-CAPA 3D SOBRE A IMAGEM DO CARD
+====================================================== */
+
+.portfolio-image-box {
+  position: relative;
+}
+
+.portfolio-badge-book {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 3;
+
+  width: 72px;
+  height: 96px;
+
+  padding: 4px;
+
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(220, 230, 240, 0.95));
+  border-radius: 10px;
+
+  box-shadow:
+    0 12px 24px rgba(0, 0, 0, 0.28),
+    -4px 4px 10px rgba(0, 0, 0, 0.12),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.55);
+
+  transform: rotate(16deg) perspective(700px) rotateY(-18deg);
+  transform-origin: center;
+
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.portfolio-badge-book::before {
+  content: "";
+
+  position: absolute;
+  top: 4px;
+  left: -6px;
+
+  width: 8px;
+  height: calc(100% - 8px);
+
+  background: linear-gradient(180deg, rgba(180, 190, 205, 0.95), rgba(235, 240, 246, 0.95));
+  border-radius: 6px 0 0 6px;
+
+  box-shadow: inset -1px 0 2px rgba(0, 0, 0, 0.12);
+}
+
+.portfolio-badge-book-image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  display: block;
+
+  border-radius: 7px;
+}
+
+.portfolio-card-flip:hover .portfolio-badge-book {
+  transform: rotate(10deg) perspective(700px) rotateY(-10deg) scale(1.05);
+  box-shadow:
+    0 16px 28px rgba(0, 0, 0, 0.32),
+    -6px 6px 14px rgba(0, 0, 0, 0.15),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+}

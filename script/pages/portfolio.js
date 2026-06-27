@@ -52,99 +52,105 @@ function carregarProjetos(grupoSelecionado = "todos") {
   }
 
   projetosFiltrados.forEach(function (projeto) {
-    const card = document.createElement("article");
-    card.classList.add("portfolio-card-flip");
+  const card = document.createElement("article");
+  card.classList.add("portfolio-card-flip");
 
-    const tecnologiasHTML = projeto.tecnologias
-      .map(function (tecnologia) {
-        return `<span class="portfolio-tag">${tecnologia}</span>`;
-      })
-      .join("");
-      const iconeHTML = projeto.icone
-  ? `
-    <div class="portfolio-badge-icon">
-      <i class="fa-solid ${projeto.icone}"></i>
-    </div>
-  `
-  : "";
-    card.innerHTML = `
-      <div class="portfolio-card-inner">
+  const tecnologiasHTML = projeto.tecnologias
+    .map(function (tecnologia) {
+      return `<span class="portfolio-tag">${tecnologia}</span>`;
+    })
+    .join("");
 
-        <div class="portfolio-card-face portfolio-card-front">
+  const seloImagemHTML = projeto.seloImagem
+    ? `
+      <div class="portfolio-badge-book">
+        <img 
+          src="${projeto.seloImagem}" 
+          alt="Capa relacionada ao projeto ${projeto.titulo}" 
+          class="portfolio-badge-book-image"
+        >
+      </div>
+    `
+    : "";
 
-          <div class="portfolio-image-box">
-  ${iconeHTML}
+  card.innerHTML = `
+    <div class="portfolio-card-inner">
 
-  <img 
-    src="${projeto.imagem}" 
-    alt="Imagem do projeto ${projeto.titulo}" 
-    class="portfolio-image"
-  >
-</div>
+      <div class="portfolio-card-face portfolio-card-front">
 
-          <div class="portfolio-front-content">
-            <p class="portfolio-categoria">${projeto.categoria}</p>
+        <div class="portfolio-image-box">
+          ${seloImagemHTML}
 
-            <h3>${projeto.titulo}</h3>
-
-            <div class="portfolio-meta">
-              <span>${projeto.data}</span>
-              <span>${projeto.tipo}</span>
-            </div>
-
-            <p>${projeto.descricao}</p>
-
-            <button class="portfolio-flip-btn" type="button">
-              Ver detalhes
-            </button>
-          </div>
-
+          <img 
+            src="${projeto.imagem}" 
+            alt="Imagem do projeto ${projeto.titulo}" 
+            class="portfolio-image"
+          >
         </div>
 
-        <div class="portfolio-card-face portfolio-card-back">
+        <div class="portfolio-front-content">
+          <p class="portfolio-categoria">${projeto.categoria}</p>
 
-          <div class="portfolio-back-content">
-            <p class="portfolio-status">${projeto.status}</p>
+          <h3>${projeto.titulo}</h3>
 
-            <h3>${projeto.titulo}</h3>
-
-            <p>${projeto.detalhes}</p>
-
-            <div class="portfolio-tags">
-              ${tecnologiasHTML}
-            </div>
-
-            <div class="portfolio-actions">
-              <a 
-                href="${projeto.link}" 
-                class="card-link" 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                ${projeto.textoLink}
-              </a>
-
-              <button class="portfolio-flip-btn voltar" type="button">
-                Voltar
-              </button>
-            </div>
+          <div class="portfolio-meta">
+            <span>${projeto.data}</span>
+            <span>${projeto.tipo}</span>
           </div>
 
+          <p>${projeto.descricao}</p>
+
+          <button class="portfolio-flip-btn" type="button">
+            Ver detalhes
+          </button>
         </div>
 
       </div>
-    `;
 
-    const botoesVirar = card.querySelectorAll(".portfolio-flip-btn");
+      <div class="portfolio-card-face portfolio-card-back">
 
-    botoesVirar.forEach(function (botao) {
-      botao.addEventListener("click", function () {
-        card.classList.toggle("virado");
-      });
+        <div class="portfolio-back-content">
+          <p class="portfolio-status">${projeto.status}</p>
+
+          <h3>${projeto.titulo}</h3>
+
+          <p>${projeto.detalhes}</p>
+
+          <div class="portfolio-tags">
+            ${tecnologiasHTML}
+          </div>
+
+          <div class="portfolio-actions">
+            <a 
+              href="${projeto.link}" 
+              class="card-link" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              ${projeto.textoLink}
+            </a>
+
+            <button class="portfolio-flip-btn voltar" type="button">
+              Voltar
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  `;
+
+  const botoesVirar = card.querySelectorAll(".portfolio-flip-btn");
+
+  botoesVirar.forEach(function (botao) {
+    botao.addEventListener("click", function () {
+      card.classList.toggle("virado");
     });
-
-    container.appendChild(card);
   });
+
+  container.appendChild(card);
+});
 }
 
 function ativarFiltroPortfolio() {
