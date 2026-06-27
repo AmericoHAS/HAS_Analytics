@@ -4,7 +4,13 @@
 // ======================================================
 
 document.addEventListener("DOMContentLoaded", function () {
-  carregarProjetos();
+  const filtro = document.getElementById("portfolio-filtro-select");
+
+  if (filtro) {
+    filtro.value = "todos";
+  }
+
+  carregarProjetos("todos");
   ativarFiltroPortfolio();
 });
 
@@ -18,6 +24,11 @@ function carregarProjetos(grupoSelecionado = "todos") {
 
   if (!window.PROJETOS || !Array.isArray(window.PROJETOS)) {
     console.error("Lista window.PROJETOS não encontrada.");
+    container.innerHTML = `
+      <p class="portfolio-vazio">
+        Nenhum trabalho encontrado. Verifique se o arquivo projetos.js foi carregado antes do portfolio.js.
+      </p>
+    `;
     return;
   }
 
@@ -54,6 +65,7 @@ function carregarProjetos(grupoSelecionado = "todos") {
       <div class="portfolio-card-inner">
 
         <div class="portfolio-card-face portfolio-card-front">
+
           <div class="portfolio-image-box">
             <img 
               src="${projeto.imagem}" 
@@ -78,9 +90,11 @@ function carregarProjetos(grupoSelecionado = "todos") {
               Ver detalhes
             </button>
           </div>
+
         </div>
 
         <div class="portfolio-card-face portfolio-card-back">
+
           <div class="portfolio-back-content">
             <p class="portfolio-status">${projeto.status}</p>
 
@@ -107,6 +121,7 @@ function carregarProjetos(grupoSelecionado = "todos") {
               </button>
             </div>
           </div>
+
         </div>
 
       </div>

@@ -1,46 +1,147 @@
 /* ======================================================
    PORTFOLIO.CSS - HAS Analytics
-   Cards com imagem, dados e efeito flip
+   Portfólio com filtro, rolagem horizontal e cards flip
 ====================================================== */
 
-.cards-grid {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: calc((100% - 44px) / 3);
 
+/* ======================================================
+   CONTROLES DO PORTFÓLIO
+====================================================== */
+
+.portfolio-controles {
+  margin-top: 26px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+
+  flex-wrap: wrap;
+}
+
+.portfolio-filtro {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  width: 100%;
+  max-width: 360px;
+}
+
+.portfolio-filtro label {
+  color: var(--text-soft);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.portfolio-filtro select {
+  width: 100%;
+
+  padding: 13px 16px;
+
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid var(--border-soft);
+  border-radius: 999px;
+
+  font-size: 0.92rem;
+  font-weight: 700;
+
+  outline: none;
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.portfolio-filtro select:hover,
+.portfolio-filtro select:focus {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.08);
+}
+
+.portfolio-filtro option {
+  color: #020617;
+  background: #ffffff;
+}
+
+.portfolio-aviso {
+  margin: 0;
+  padding: 10px 16px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  width: fit-content;
+
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid var(--border-soft);
+  border-radius: 999px;
+
+  font-size: 0.86rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.portfolio-aviso::before {
+  content: "↔";
+  color: var(--accent-blue);
+  font-size: 1rem;
+}
+
+
+/* ======================================================
+   GRID HORIZONTAL DO PORTFÓLIO
+====================================================== */
+
+#portfolio-container {
+  margin-top: 34px;
+
+  display: flex;
   gap: 22px;
 
   overflow-x: auto;
   overflow-y: hidden;
 
-  padding-bottom: 20px;
+  padding-bottom: 22px;
 
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
 }
 
-.cards-grid::-webkit-scrollbar {
+#portfolio-container::-webkit-scrollbar {
   height: 8px;
 }
 
-.cards-grid::-webkit-scrollbar-track {
+#portfolio-container::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0.06);
   border-radius: 999px;
 }
 
-.cards-grid::-webkit-scrollbar-thumb {
+#portfolio-container::-webkit-scrollbar-thumb {
   background: rgba(56, 189, 248, 0.45);
   border-radius: 999px;
 }
 
-.cards-grid::-webkit-scrollbar-thumb:hover {
+#portfolio-container::-webkit-scrollbar-thumb:hover {
   background: rgba(56, 189, 248, 0.75);
 }
 
-.portfolio-card-flip {
-  height: 520px;
-  scroll-snap-align: start;
 
+/* ======================================================
+   CARD FLIP
+====================================================== */
+
+.portfolio-card-flip {
+  flex: 0 0 calc((100% - 44px) / 3);
+
+  height: 540px;
+
+  position: relative;
+
+  scroll-snap-align: start;
   perspective: 1200px;
 }
 
@@ -77,14 +178,29 @@
   -webkit-backface-visibility: hidden;
 }
 
+.portfolio-card-front {
+  transform: rotateY(0deg);
+}
+
 .portfolio-card-back {
   transform: rotateY(180deg);
 }
 
+
+/* ======================================================
+   IMAGEM DO CARD
+====================================================== */
+
 .portfolio-image-box {
+  width: 100%;
   height: 190px;
 
-  background: rgba(255, 255, 255, 0.04);
+  flex-shrink: 0;
+
+  background:
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), transparent 35%),
+    rgba(255, 255, 255, 0.04);
+
   border-bottom: 1px solid var(--border-soft);
 
   overflow: hidden;
@@ -95,14 +211,21 @@
   height: 100%;
 
   object-fit: cover;
+  object-position: center;
+
   display: block;
 
   transition: 0.4s ease;
 }
 
 .portfolio-card-flip:hover .portfolio-image {
-  transform: scale(1.06);
+  transform: scale(1.05);
 }
+
+
+/* ======================================================
+   CONTEÚDO DO CARD
+====================================================== */
 
 .portfolio-front-content,
 .portfolio-back-content {
@@ -132,6 +255,12 @@
   line-height: 1.35;
 }
 
+.portfolio-card-flip p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
 .portfolio-meta {
   margin-bottom: 14px;
 
@@ -152,20 +281,20 @@
   font-weight: 700;
 }
 
-.portfolio-card-flip p {
-  color: var(--text-muted);
-  font-size: 0.9rem;
-}
-
 .portfolio-status {
   margin-bottom: 12px;
 
   color: var(--accent-gold) !important;
-  font-size: 0.84rem !important;
+  font-size: 0.82rem !important;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.7px;
 }
+
+
+/* ======================================================
+   TAGS DO CARD
+====================================================== */
 
 .portfolio-tags {
   margin-top: 18px;
@@ -186,6 +315,11 @@
   font-size: 0.72rem;
   font-weight: 600;
 }
+
+
+/* ======================================================
+   BOTÕES DO CARD
+====================================================== */
 
 .portfolio-flip-btn {
   width: fit-content;
@@ -243,100 +377,14 @@
   border: 1px solid var(--border-soft);
 }
 
-/* Aviso de rolagem */
-.portfolio-aviso {
-  margin-top: 18px;
-  padding: 8px 14px;
-
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-
-  width: fit-content;
-
-  color: var(--text-muted);
-  background: rgba(255, 255, 255, 0.035);
-  border: 1px solid var(--border-soft);
-  border-radius: 999px;
-
-  font-size: 0.86rem;
-  font-weight: 600;
-}
-
-.portfolio-aviso::before {
-  content: "↔";
-  color: var(--accent-blue);
-  font-size: 1rem;
-}
-
-/* Responsivo */
-@media (max-width: 1024px) {
-  .cards-grid {
-    grid-auto-columns: calc((100% - 22px) / 2);
-  }
-}
-
-@media (max-width: 640px) {
-  .cards-grid {
-    grid-auto-columns: 88%;
-  }
-
-  .portfolio-card-flip {
-    height: 540px;
-  }
-}
 
 /* ======================================================
-   FILTRO DO PORTFÓLIO
+   MENSAGEM QUANDO NÃO HÁ PROJETO
 ====================================================== */
 
-.portfolio-filtro {
-  margin-top: 26px;
-
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-
-  max-width: 360px;
-}
-
-.portfolio-filtro label {
-  color: var(--text-soft);
-  font-size: 0.88rem;
-  font-weight: 700;
-}
-
-.portfolio-filtro select {
-  width: 100%;
-
-  padding: 13px 16px;
-
-  color: var(--text-main);
-  background: rgba(255, 255, 255, 0.045);
-  border: 1px solid var(--border-soft);
-  border-radius: 999px;
-
-  font-size: 0.92rem;
-  font-weight: 700;
-
-  outline: none;
-  cursor: pointer;
-
-  transition: 0.3s ease;
-}
-
-.portfolio-filtro select:hover,
-.portfolio-filtro select:focus {
-  border-color: var(--accent-blue);
-  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.08);
-}
-
-.portfolio-filtro option {
-  color: #020617;
-  background: #ffffff;
-}
-
 .portfolio-vazio {
+  min-width: 100%;
+
   padding: 28px;
 
   color: var(--text-muted);
@@ -345,4 +393,61 @@
   border-radius: var(--radius-medium);
 
   font-size: 0.95rem;
+}
+
+
+/* ======================================================
+   RESPONSIVIDADE
+====================================================== */
+
+@media (max-width: 1100px) {
+  .portfolio-card-flip {
+    flex-basis: calc((100% - 22px) / 2);
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-controles {
+    align-items: flex-start;
+  }
+
+  .portfolio-aviso {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 640px) {
+  .portfolio-card-flip {
+    flex-basis: 88%;
+    height: 570px;
+  }
+
+  .portfolio-image-box {
+    height: 175px;
+  }
+
+  .portfolio-front-content,
+  .portfolio-back-content {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 420px) {
+  .portfolio-card-flip {
+    flex-basis: 92%;
+    height: 590px;
+  }
+
+  .portfolio-card-flip h3 {
+    font-size: 1rem;
+  }
+
+  .portfolio-card-flip p {
+    font-size: 0.86rem;
+  }
+
+  .portfolio-meta span,
+  .portfolio-tag {
+    font-size: 0.68rem;
+  }
 }
