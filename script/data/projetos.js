@@ -36,25 +36,58 @@ window.PROJETOS = [
     textoLink: "Acessar material"
   },
 
-  {
-    titulo: "Avaliação do aplicativo Passando Plantão",
-    categoria: "Bioestatística | Saúde",
-    data: "2026",
-    status: "Consultoria acadêmica",
-    tipo: "Análise de questionário",
-    imagem: "assets/img/portfolio/passando-plantao.png",
-    descricao:
-      "Apoio estatístico em pesquisa aplicada à saúde, envolvendo análise de aceitação, usabilidade, questionários e interpretação de resultados.",
-    detalhes:
-      "A análise envolveu descrição do perfil dos participantes, avaliação de itens, escalas de usabilidade e organização dos resultados para relatório acadêmico.",
-    tecnologias: ["R", "Questionários", "SUS", "Relatórios acadêmicos"],
-    link: "https://github.com/AmericoHAS",
-    textoLink: "Acessar material"
-  },
+ {
+  titulo: "Ajuste de modelos não lineares mistos à análise de degradabilidade ruminal in vitro",
+  categoria: "Bioestatística | Zootecnia",
+  grupo: "producoes",
+  data: "2026",
+  status: "Dissertação de mestrado",
+  tipo: "Dissertação",
+
+  imagem: "assets/img/portfolio/degradabilidade-ruminal.png",
+
+  descricao:
+    "Dissertação voltada à aplicação de modelos não lineares mistos na análise de curvas de degradabilidade ruminal in vitro, considerando a estrutura longitudinal dos dados e a variabilidade entre unidades experimentais.",
+
+  detalhes:
+    "O estudo envolveu o ajuste e a comparação de modelos não lineares para descrever o comportamento da degradabilidade ruminal ao longo do tempo. A abordagem com efeitos mistos possibilitou incorporar a dependência entre observações repetidas e avaliar a variabilidade associada aos parâmetros dos modelos.",
+
+  tecnologias: [
+    "R",
+    "nlme",
+    "Modelos não lineares mistos",
+    "Dados longitudinais",
+    "Zootecnia"
+  ],
+
+  link: "https://github.com/AmericoHAS",
+  textoLink: "Acessar material"
+},
+
+{
+  titulo: "HAS Analytics",
+  categoria: "Projeto web | Portfólio profissional",
+  grupo: "projetos-web",
+  data: "2026",
+  status: "Projeto pessoal",
+  tipo: "Site profissional",
+  imagem: "assets/img/portfolio/has-analytics.png",
+  descricao:
+    "Site pessoal e profissional desenvolvido para apresentar projetos, serviços estatísticos, produções acadêmicas e formas de contato.",
+  detalhes:
+    "O projeto foi desenvolvido com HTML, CSS e JavaScript, com organização modular dos arquivos, seções dinâmicas e portfólio alimentado por JavaScript.",
+  tecnologias: ["HTML", "CSS", "JavaScript", "GitHub", "Vercel"],
+  link: "https://github.com/AmericoHAS",
+  textoLink: "Acessar projeto"
+},
+
+
+
 
   {
     titulo: "Real Math",
     categoria: "Educação Matemática | Tecnologia",
+    grupo: "projetos-web",
     data: "2026",
     status: "Projeto educacional",
     tipo: "Projeto em desenvolvimento",

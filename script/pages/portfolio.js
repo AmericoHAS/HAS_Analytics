@@ -1,13 +1,14 @@
 // ======================================================
 // PORTFOLIO.JS - HAS Analytics
-// Cards automáticos com efeito de virar
+// Cards automáticos com filtro por categoria
 // ======================================================
 
 document.addEventListener("DOMContentLoaded", function () {
   carregarProjetos();
+  ativarFiltroPortfolio();
 });
 
-function carregarProjetos() {
+function carregarProjetos(grupoSelecionado = "todos") {
   const container = document.getElementById("portfolio-container");
 
   if (!container) {
@@ -22,7 +23,24 @@ function carregarProjetos() {
 
   container.innerHTML = "";
 
-  window.PROJETOS.forEach(function (projeto) {
+  const projetosFiltrados = window.PROJETOS.filter(function (projeto) {
+    if (grupoSelecionado === "todos") {
+      return true;
+    }
+
+    return projeto.grupo === grupoSelecionado;
+  });
+
+  if (projetosFiltrados.length === 0) {
+    container.innerHTML = `
+      <p class="portfolio-vazio">
+        Nenhum trabalho cadastrado nesta categoria.
+      </p>
+    `;
+    return;
+  }
+
+  projetosFiltrados.forEach(function (projeto) {
     const card = document.createElement("article");
     card.classList.add("portfolio-card-flip");
 
@@ -103,5 +121,17 @@ function carregarProjetos() {
     });
 
     container.appendChild(card);
+  });
+}
+
+function ativarFiltroPortfolio() {
+  const filtro = document.getElementById("portfolio-filtro-select");
+
+  if (!filtro) {
+    return;
+  }
+
+  filtro.addEventListener("change", function () {
+    carregarProjetos(filtro.value);
   });
 }

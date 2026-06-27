@@ -285,3 +285,64 @@
     height: 540px;
   }
 }
+
+/* ======================================================
+   FILTRO DO PORTFÓLIO
+====================================================== */
+
+.portfolio-filtro {
+  margin-top: 26px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  max-width: 360px;
+}
+
+.portfolio-filtro label {
+  color: var(--text-soft);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.portfolio-filtro select {
+  width: 100%;
+
+  padding: 13px 16px;
+
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid var(--border-soft);
+  border-radius: 999px;
+
+  font-size: 0.92rem;
+  font-weight: 700;
+
+  outline: none;
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.portfolio-filtro select:hover,
+.portfolio-filtro select:focus {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.08);
+}
+
+.portfolio-filtro option {
+  color: #020617;
+  background: #ffffff;
+}
+
+.portfolio-vazio {
+  padding: 28px;
+
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-medium);
+
+  font-size: 0.95rem;
+}

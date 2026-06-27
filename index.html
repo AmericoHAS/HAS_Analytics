@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="css/responsive.css">
 
   <!-- CSS das seções -->
-   <link rel="stylesheet" href="css/sections/portfolio.css">
+  <link rel="stylesheet" href="css/sections/portfolio.css">
   <link rel="stylesheet" href="css/sections/skills.css">
 </head>
 
@@ -222,37 +222,37 @@
     </section>
 
     <!-- Portfólio -->
-    <section class="section section-portfolio" id="portfolio">
-      <div class="container">
+    <div class="section-header">
+      <p class="section-tag">Portfólio</p>
 
-        <div class="section-header">
-          <p class="section-tag">Portfólio</p>
+      <h2>
+        Projetos, produções e trabalhos desenvolvidos.
+      </h2>
 
+      <p>
+        Reúno aqui produções acadêmicas, projetos estatísticos, materiais educacionais,
+        apresentações em eventos e projetos web desenvolvidos ao longo da minha trajetória.
+      </p>
 
+      <div class="portfolio-filtro">
+        <label for="portfolio-filtro-select">
+          Escolha o tipo de trabalho:
+        </label>
 
-          <h2>
-            Projetos acadêmicos, estatísticos e educacionais.
-          </h2>
-
-
-          <p>
-            Alguns trabalhos e projetos desenvolvidos ou em desenvolvimento nas áreas de
-            Bioestatística, Estatística Aplicada, modelagem e educação matemática.
-          </p>
-
-          <p class="portfolio-aviso">
-            Arraste para o lado para visualizar mais projetos.
-          </p>
-
-
-        </div>
-
-        <div class="cards-grid" id="portfolio-container">
-          <!-- Os projetos serão carregados pelo JavaScript -->
-        </div>
-
+        <select id="portfolio-filtro-select">
+          <option value="todos">Todos os trabalhos</option>
+          <option value="producoes">Produções acadêmicas</option>
+          <option value="projetos-web">Projetos web</option>
+          <option value="eventos">Apresentações e eventos</option>
+          <option value="consultorias">Consultorias e relatórios</option>
+          <option value="educacionais">Projetos educacionais</option>
+        </select>
       </div>
-    </section>
+
+      <p class="portfolio-aviso">
+        Arraste para o lado para visualizar mais projetos.
+      </p>
+    </div>
 
     <!-- Serviços -->
     <section class="section section-servicos" id="servicos">
@@ -726,15 +726,15 @@
   </footer>
 
   <!-- JavaScript -->
-<script src="script/config/config-geral.js" defer></script>
-<script src="script/core/menu.js" defer></script>
-<script src="script/core/scroll.js" defer></script>
+  <script src="script/config/config-geral.js" defer></script>
+  <script src="script/core/menu.js" defer></script>
+  <script src="script/core/scroll.js" defer></script>
 
-<script src="script/data/projetos.js" defer></script>
+  <script src="script/data/projetos.js" defer></script>
 
-<script src="script/pages/home.js" defer></script>
-<script src="script/pages/skills.js" defer></script>
-<script src="script/pages/portfolio.js" defer></script>
+  <script src="script/pages/home.js" defer></script>
+  <script src="script/pages/skills.js" defer></script>
+  <script src="script/pages/portfolio.js" defer></script>
 
 </body>
 
