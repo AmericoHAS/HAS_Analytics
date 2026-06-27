@@ -30,7 +30,7 @@ window.PROJETOS = [
   tipo: "Artigo",
 
   imagem: "assets/img/portfolio/ligiane.png",
-  seloImagem: "assets/img/ligiane-fundo.png",
+  seloImagem: "assets/img/portfolio/ligiane-fundo.png",
 
   descricao:
     "Artigo voltado à avaliação de condições clínicas e à aplicação de ações educativas direcionadas ao cuidado preventivo de complicações em pessoas com diabetes mellitus tipo 1 e 2 em uso de insulina.",
