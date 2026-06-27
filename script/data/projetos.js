@@ -36,7 +36,7 @@ window.PROJETOS = [
     "Artigo voltado à avaliação de condições clínicas e à aplicação de ações educativas direcionadas ao cuidado preventivo de complicações em pessoas com diabetes mellitus tipo 1 e 2 em uso de insulina.",
 
   detalhes:
-    "O estudo foi desenvolvido com participantes atendidos na farmácia da UBS de Itaúna do Sul – PR, envolvendo avaliação clínica, entrevistas sobre qualidade de vida e ações coletivas de educação em saúde. Os resultados indicaram melhora em aspectos relacionados à glicemia, limitação física, dor e saúde mental, reforçando a importância de intervenções educativas no cuidado ao diabetes.",
+    "O estudo foi desenvolvido com participantes atendidos na farmácia da UBS de Itaúna do Sul – PR, envolvendo avaliação clínica, entrevistas sobre qualidade de vida e ações coletivas de educação em saúde.",
 
   tecnologias: [
     "Educação em saúde",
