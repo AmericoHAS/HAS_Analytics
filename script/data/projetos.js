@@ -64,6 +64,24 @@ window.PROJETOS = [
 },
 
  {
+    titulo: "Real Math",
+    categoria: "Educação Matemática | Tecnologia",
+    grupo: "projetos-web",
+    data: "2026",
+    status: "Projeto educacional",
+    tipo: "Projeto em desenvolvimento",
+    imagem: "assets/img/portfolio/real-math-fundo.png",
+    seloImagem: "assets/img/portfolio/real-math.png",
+    descricao:
+      "Projeto educacional voltado à criação de experiências matemáticas contextualizadas, com atividades por estações, tecnologia e resolução de problemas.",
+    detalhes:
+      "A proposta busca aproximar a Matemática de situações reais da escola, com banco de atividades, gincanas por estações e apoio ao professor.",
+    tecnologias: ["Educação", "Matemática", "Tecnologia", "Gamificação"],
+    link: "https://real-math-six.vercel.app/",
+    textoLink: "Acessar projeto"
+  },
+  
+ {
   titulo: "Ajuste de modelos não lineares mistos à análise de degradabilidade ruminal in vitro",
   categoria: "Bioestatística | Zootecnia",
   grupo: "producoes",
@@ -112,23 +130,7 @@ window.PROJETOS = [
 
 
 
-  {
-    titulo: "Real Math",
-    categoria: "Educação Matemática | Tecnologia",
-    grupo: "projetos-web",
-    data: "2026",
-    status: "Projeto educacional",
-    tipo: "Projeto em desenvolvimento",
-    imagem: "assets/img/portfolio/real-math-fundo.png",
-    seloImagem: "assets/img/portfolio/real-math.png",
-    descricao:
-      "Projeto educacional voltado à criação de experiências matemáticas contextualizadas, com atividades por estações, tecnologia e resolução de problemas.",
-    detalhes:
-      "A proposta busca aproximar a Matemática de situações reais da escola, com banco de atividades, gincanas por estações e apoio ao professor.",
-    tecnologias: ["Educação", "Matemática", "Tecnologia", "Gamificação"],
-    link: "https://real-math-six.vercel.app/",
-    textoLink: "Acessar projeto"
-  },
+ 
 
   {
   titulo: "Estudo da produção de cultivares de cebola usando modelos mistos",
