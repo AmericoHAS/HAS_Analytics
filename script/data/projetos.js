@@ -64,7 +64,7 @@ window.PROJETOS = [
     detalhes:
       "A proposta busca aproximar a Matemática de situações reais da escola, com banco de atividades, gincanas por estações e apoio ao professor.",
     tecnologias: ["Educação", "Matemática", "Tecnologia", "Gamificação"],
-    link: "https://github.com/AmericoHAS",
+    link: "https://real-math-six.vercel.app/",
     textoLink: "Acessar projeto"
   }
 ];
