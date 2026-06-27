@@ -6,20 +6,33 @@
 window.PROJETOS = [
   
   {
-    titulo: "Modelagem de gases ruminais in vitro",
-    categoria: "Modelos não lineares | Estatística Aplicada",
-    data: "2025",
-    status: "Pesquisa aplicada",
-    tipo: "Artigo / Evento",
-    imagem: "assets/img/portfolio/gases-ruminais.png",
-    descricao:
-      "Aplicação de modelos não lineares e estruturas de correlação para análise da produção cumulativa de gases ruminais em experimentos in vitro.",
-    detalhes:
-      "Foram ajustados modelos não lineares para descrever curvas de produção de gases, considerando estruturas de dependência temporal e comparação entre forragens.",
-    tecnologias: ["R", "nlme", "Modelos não lineares", "Dados longitudinais"],
-    link: "https://github.com/AmericoHAS",
-    textoLink: "Acessar material"
-  },
+  titulo: "Modelagem estatística aplicada à degradabilidade ruminal in vitro",
+  categoria: "Bioestatística | Modelos não lineares",
+  grupo: "producoes",
+  data: "2026",
+  status: "Manuscrito em submissão",
+  tipo: "Artigo científico",
+
+  imagem: "assets/img/portfolio/dissertacao-ruminal.png",
+
+  descricao:
+    "Produção acadêmica derivada da dissertação de mestrado, voltada à aplicação de modelos estatísticos em dados experimentais de degradabilidade ruminal in vitro.",
+
+  detalhes:
+    "O estudo contempla o ajuste de modelos não lineares e modelos não lineares mistos para a análise de curvas de degradabilidade ao longo do tempo, considerando a estrutura longitudinal dos dados e a variabilidade associada às unidades experimentais.",
+
+  tecnologias: [
+    "R",
+    "Modelos não lineares",
+    "Modelos mistos",
+    "Dados longitudinais",
+    "Bioestatística",
+    "Zootecnia"
+  ],
+
+  link: "#",
+  textoLink: "Disponível após publicação"
+},
 
   {
   titulo: "Educação em saúde: cuidados para a redução de riscos de complicações em pessoas com diabetes tipo 1 e 2 em uso de insulina",
@@ -147,6 +160,36 @@ window.PROJETOS = [
 },
 
 {
+  titulo: "Análise estatística aplicada ao estudo de metais em hortaliças",
+  categoria: "Estatística Aplicada | Ciências Agrárias",
+  grupo: "producoes",
+  data: "2026",
+  status: "Estudo em desenvolvimento",
+  tipo: "Pesquisa em parceria",
+
+  imagem: "assets/img/portfolio/metais-hortalicas.png",
+
+  descricao:
+    "Pesquisa em parceria voltada à aplicação de métodos estatísticos na análise de dados relacionados à presença de metais em hortaliças, com foco na organização, exploração e interpretação dos resultados.",
+
+  detalhes:
+    "Por se tratar de um estudo ainda em desenvolvimento e vinculado a uma colaboração científica, as informações específicas sobre dados, variáveis, procedimentos analíticos e resultados serão divulgadas somente após a finalização e publicação do trabalho.",
+
+  tecnologias: [
+    "R",
+    "Estatística aplicada",
+    "Análise exploratória",
+    "Ciências agrárias",
+    "Pesquisa colaborativa"
+  ],
+
+  link: "#",
+  textoLink: "Em desenvolvimento"
+},
+
+
+
+{
   titulo: "Caçada Trigonométrica",
   categoria: "Educação Matemática | Projeto Web",
   grupo: "projetos-web",
@@ -176,6 +219,64 @@ window.PROJETOS = [
 },
 
 {
+  titulo: "Análise estatística aplicada a dados farmacológicos",
+  categoria: "Bioestatística | Farmacologia",
+  grupo: "producoes",
+  data: "2026",
+  status: "Estudo em desenvolvimento",
+  tipo: "Pesquisa em parceria",
+
+  imagem: "assets/img/portfolio/desenvolvimento.png",
+
+  descricao:
+    "Pesquisa em parceria voltada à aplicação de métodos estatísticos na análise de dados farmacológicos, com apoio na organização, exploração e interpretação dos resultados.",
+
+  detalhes:
+    "Por se tratar de um estudo em desenvolvimento e vinculado a uma colaboração científica, as informações específicas sobre os fármacos, delineamento, variáveis analisadas e resultados serão apresentadas somente após a finalização e divulgação formal do trabalho pelos autores.",
+
+  tecnologias: [
+    "R",
+    "Bioestatística",
+    "Farmacologia",
+    "Análise exploratória",
+    "Modelagem estatística",
+    "Pesquisa colaborativa"
+  ],
+
+  link: "#",
+  textoLink: "Em desenvolvimento"
+},
+
+{
+  titulo: "Análise estatística aplicada a estudo sobre prédios públicos",
+  categoria: "Estatística Aplicada | Adesão a prédios públicos",
+  grupo: "consultorias",
+  data: "2026",
+  status: "Estudo em desenvolvimento",
+  tipo: "Pesquisa em parceria",
+
+  imagem: "assets/img/portfolio/desenvolvimento.png",
+
+  descricao:
+    "Pesquisa em parceria voltada à análise de dados relacionados à avaliação de condições demográficas a adesão de municípios a prédios públicos no Paraná",
+
+  detalhes:
+    "O trabalho envolve apoio na organização, descrição e interpretação estatística dos dados. Por se tratar de uma pesquisa em desenvolvimento e vinculada a outros pesquisadores, informações específicas sobre instrumentos, locais avaliados, variáveis e resultados serão divulgadas somente após a finalização formal do estudo.",
+
+  tecnologias: [
+    "R",
+    "Estatística aplicada",
+    "Análise descritiva",
+    "Dados de campo",
+    "Acessibilidade",
+    "Pesquisa colaborativa"
+  ],
+
+  link: "#",
+  textoLink: "Em desenvolvimento"
+},
+
+{
   titulo: "Sistema de controle para Lava Car",
   categoria: "Projeto Web | Gestão de Serviços",
   grupo: "projetos-web",
@@ -202,6 +303,64 @@ window.PROJETOS = [
 
   link: "https://controle-lava-car.vercel.app/",
   textoLink: "Acessar projeto"
+},
+
+{
+  titulo: "Análise estatística aplicada à avaliação de aplicativo hospitalar",
+  categoria: "Bioestatística | Gestão Hospitalar",
+  grupo: "consultorias",
+  data: "2026",
+  status: "Estudo em desenvolvimento",
+  tipo: "Pesquisa em parceria",
+
+  imagem: "assets/img/portfolio/desenvolvimento.png",
+
+  descricao:
+    "Pesquisa em parceria voltada à avaliação da implementação de um aplicativo hospitalar relacionado à gestão e acompanhamento de leitos, com apoio estatístico na organização e interpretação dos dados.",
+
+  detalhes:
+    "O trabalho envolve análise de dados coletados no contexto hospitalar, com foco na avaliação do uso, implementação e percepção dos usuários em relação à ferramenta. Por se tratar de uma pesquisa em desenvolvimento e vinculada a outros pesquisadores, informações específicas sobre o aplicativo, instrumentos, participantes e resultados serão divulgadas somente após a finalização formal do estudo.",
+
+  tecnologias: [
+    "R",
+    "Bioestatística",
+    "Saúde hospitalar",
+    "Análise de questionários",
+    "Avaliação de aplicativo",
+    "Pesquisa colaborativa"
+  ],
+
+  link: "#",
+  textoLink: "Em desenvolvimento"
+},
+
+{
+  titulo: "Análise estatística aplicada à avaliação de aplicativo em ambiente hospitalar",
+  categoria: "Bioestatística | Saúde Hospitalar",
+  grupo: "consultorias",
+  data: "2026",
+  status: "Estudo em desenvolvimento",
+  tipo: "Pesquisa em parceria",
+
+  imagem: "assets/img/portfolio/desenvolvimento.png",
+
+  descricao:
+    "Pesquisa em parceria voltada à avaliação de um aplicativo implementado em ambiente hospitalar, com apoio estatístico na organização, análise e interpretação dos dados coletados.",
+
+  detalhes:
+    "O estudo envolve a avaliação de uma ferramenta digital relacionada a processos assistenciais no contexto hospitalar. Por se tratar de uma pesquisa em desenvolvimento e vinculada a outros pesquisadores, informações específicas sobre o aplicativo, participantes, instrumentos, fluxos avaliados e resultados serão divulgadas somente após a finalização formal do trabalho.",
+
+  tecnologias: [
+    "R",
+    "Bioestatística",
+    "Saúde hospitalar",
+    "Avaliação de aplicativo",
+    "Análise de questionários",
+    "Pesquisa colaborativa"
+  ],
+
+  link: "#",
+  textoLink: "Em desenvolvimento"
 },
 
 ];
