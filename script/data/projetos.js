@@ -109,7 +109,7 @@ window.PROJETOS = [
   status: "Capítulo de livro publicado",
   tipo: "Capítulo de livro",
 
-  imagem: "assets/img/portfolio/cultivares-cebola.png",
+  imagem: "assets/img/portfolio/tcc2.png",
 
   descricao:
     "Estudo desenvolvido a partir do Trabalho de Conclusão de Curso, com aplicação de modelos mistos à análise da produção de cultivares de cebola em delineamento de blocos completos ao acaso, utilizando o ambiente estatístico R.",
