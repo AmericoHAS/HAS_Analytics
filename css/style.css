@@ -537,10 +537,10 @@ section {
 }
 
 .hero-photo-logo-back {
-  width: 78%;
-  height: 78%;
+  width: 108%;
+  height: 108%;
 
-  object-fit: contain;
+  object-fit: cover;
   display: block;
 
   filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.28));
