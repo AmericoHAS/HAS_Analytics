@@ -44,12 +44,15 @@
       <!-- Marca / Logo -->
       <a href="#inicio" class="logo-area" aria-label="Ir para o início">
 
-        <div class="logo-icon logo-animada" id="logo-animada">
-          <img src="assets/img/logo-has.png" alt="Logo da HAS Analytics" class="logo-img logo-estatica">
+        <div class="logo-icon" id="logo-video-area">
 
-          <video class="logo-video" id="logo-video" muted playsinline preload="auto" poster="assets/img/logo-has.png">
+          <img src="assets/img/logo-has.png" alt="Logo da HAS Analytics" class="logo-img-estatica"
+            id="logo-img-estatica">
+
+          <video class="logo-video" id="logo-video" muted playsinline preload="auto">
             <source src="assets/img/logo-has.mp4" type="video/mp4">
           </video>
+
         </div>
 
         <div class="logo-texto">
@@ -223,51 +226,51 @@
 
     <!-- Portfólio -->
     <!-- Portfólio -->
-<section class="section section-portfolio" id="portfolio">
-  <div class="container">
+    <section class="section section-portfolio" id="portfolio">
+      <div class="container">
 
-    <div class="section-header">
-      <p class="section-tag">Portfólio</p>
+        <div class="section-header">
+          <p class="section-tag">Portfólio</p>
 
-      <h2>
-        Projetos, produções e trabalhos desenvolvidos.
-      </h2>
+          <h2>
+            Projetos, produções e trabalhos desenvolvidos.
+          </h2>
 
-      <p>
-        Reúno aqui produções acadêmicas, projetos estatísticos, materiais educacionais,
-        apresentações em eventos e projetos web desenvolvidos ao longo da minha trajetória.
-      </p>
-    </div>
+          <p>
+            Reúno aqui produções acadêmicas, projetos estatísticos, materiais educacionais,
+            apresentações em eventos e projetos web desenvolvidos ao longo da minha trajetória.
+          </p>
+        </div>
 
-    <div class="portfolio-controles">
+        <div class="portfolio-controles">
 
-      <div class="portfolio-filtro">
-        <label for="portfolio-filtro-select">
-          Escolha o tipo de trabalho:
-        </label>
+          <div class="portfolio-filtro">
+            <label for="portfolio-filtro-select">
+              Escolha o tipo de trabalho:
+            </label>
 
-        <select id="portfolio-filtro-select">
-          <option value="todos" selected>Todos os trabalhos</option>
-          <option value="producoes">Produções acadêmicas</option>
-          <option value="projetos-web">Projetos web</option>
-          <option value="eventos">Apresentações e eventos</option>
-          <option value="consultorias">Consultorias e relatórios</option>
-          <option value="educacionais">Projetos educacionais</option>
-        </select>
+            <select id="portfolio-filtro-select">
+              <option value="todos" selected>Todos os trabalhos</option>
+              <option value="producoes">Produções acadêmicas</option>
+              <option value="projetos-web">Projetos web</option>
+              <option value="eventos">Apresentações e eventos</option>
+              <option value="consultorias">Consultorias e relatórios</option>
+              <option value="educacionais">Projetos educacionais</option>
+            </select>
+          </div>
+
+          <p class="portfolio-aviso">
+            Arraste para o lado para visualizar mais projetos.
+          </p>
+
+        </div>
+
+        <div class="cards-grid" id="portfolio-container">
+          <!-- Os projetos serão carregados pelo JavaScript -->
+        </div>
+
       </div>
-
-      <p class="portfolio-aviso">
-        Arraste para o lado para visualizar mais projetos.
-      </p>
-
-    </div>
-
-    <div class="cards-grid" id="portfolio-container">
-      <!-- Os projetos serão carregados pelo JavaScript -->
-    </div>
-
-  </div>
-</section>
+    </section>
 
     <!-- Serviços -->
     <section class="section section-servicos" id="servicos">

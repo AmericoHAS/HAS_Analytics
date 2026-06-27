@@ -4,9 +4,10 @@
 // ======================================================
 
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("home.js carregou corretamente.");
+  console.log("HAS Analytics carregado com sucesso.");
 
   aplicarEfeitoHeader();
+  ativarLogoVideo();
   ativarFotoHero();
   validarFormularioOrcamento();
 });
@@ -137,5 +138,56 @@ function ativarFotoHero() {
     setTimeout(function () {
       fotoInterna.classList.remove("girando");
     }, 1700);
+  });
+}
+
+// ------------------------------------------------------
+// Reproduz o vídeo da logo ao passar o mouse
+// ------------------------------------------------------
+
+function ativarLogoVideo() {
+  const areaLogo = document.getElementById("logo-video-area");
+  const videoLogo = document.getElementById("logo-video");
+
+  if (!areaLogo || !videoLogo) {
+    console.warn("Logo animada não encontrada no HTML.");
+    return;
+  }
+
+  function iniciarVideo() {
+    areaLogo.classList.add("video-ativo");
+
+    videoLogo.pause();
+    videoLogo.currentTime = 0;
+
+    const playPromise = videoLogo.play();
+
+    if (playPromise !== undefined) {
+      playPromise.catch(function (erro) {
+        console.warn("O navegador bloqueou ou não conseguiu iniciar o vídeo da logo:", erro);
+      });
+    }
+  }
+
+  function pararVideo() {
+    videoLogo.pause();
+    videoLogo.currentTime = 0;
+
+    areaLogo.classList.remove("video-ativo");
+  }
+
+  areaLogo.addEventListener("mouseenter", iniciarVideo);
+  areaLogo.addEventListener("mouseleave", pararVideo);
+
+  areaLogo.addEventListener("click", function (event) {
+    iniciarVideo();
+
+    setTimeout(function () {
+      pararVideo();
+    }, 1800);
+  });
+
+  videoLogo.addEventListener("ended", function () {
+    pararVideo();
   });
 }
