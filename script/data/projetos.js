@@ -99,5 +99,33 @@ window.PROJETOS = [
     tecnologias: ["Educação", "Matemática", "Tecnologia", "Gamificação"],
     link: "https://real-math-six.vercel.app/",
     textoLink: "Acessar projeto"
-  }
+  },
+
+  {
+  titulo: "Estudo da produção de cultivares de cebola usando modelos mistos",
+  categoria: "Estatística Aplicada | Agronomia",
+  grupo: "producoes",
+  data: "2023",
+  status: "Capítulo de livro publicado",
+  tipo: "Capítulo de livro",
+
+  imagem: "assets/img/portfolio/cultivares-cebola.png",
+
+  descricao:
+    "Estudo desenvolvido a partir do Trabalho de Conclusão de Curso, com aplicação de modelos mistos à análise da produção de cultivares de cebola em delineamento de blocos completos ao acaso, utilizando o ambiente estatístico R.",
+
+  detalhes:
+    "O trabalho comparou a abordagem tradicional, baseada apenas em efeitos fixos, com a modelagem linear de efeitos mistos, considerando efeitos fixos e aleatórios. Os resultados indicaram melhor desempenho do modelo misto na análise dos dados, além de apontarem o cultivar Pera IPA 1 como aquele de maior rendimento entre os cultivares avaliados.",
+
+  tecnologias: [
+    "R",
+    "Modelos mistos",
+    "Delineamento em blocos ao acaso",
+    "Estatística experimental",
+    "Agronomia"
+  ],
+
+  link: "https://ampllaeditora.com.br/books/2025/08/EstudosPropostasMatematica.pdf",
+  textoLink: "Acessar capítulo"
+},
 ];
