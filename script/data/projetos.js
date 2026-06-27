@@ -110,6 +110,7 @@ window.PROJETOS = [
   tipo: "Capítulo de livro",
 
   imagem: "assets/img/portfolio/tcc2.png",
+  icone: "fa-file-pdf",
 
   descricao:
     "Estudo desenvolvido a partir do Trabalho de Conclusão de Curso, com aplicação de modelos mistos à análise da produção de cultivares de cebola em delineamento de blocos completos ao acaso, utilizando o ambiente estatístico R.",

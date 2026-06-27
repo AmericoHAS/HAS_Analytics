@@ -60,19 +60,27 @@ function carregarProjetos(grupoSelecionado = "todos") {
         return `<span class="portfolio-tag">${tecnologia}</span>`;
       })
       .join("");
-
+      const iconeHTML = projeto.icone
+  ? `
+    <div class="portfolio-badge-icon">
+      <i class="fa-solid ${projeto.icone}"></i>
+    </div>
+  `
+  : "";
     card.innerHTML = `
       <div class="portfolio-card-inner">
 
         <div class="portfolio-card-face portfolio-card-front">
 
           <div class="portfolio-image-box">
-            <img 
-              src="${projeto.imagem}" 
-              alt="Imagem do projeto ${projeto.titulo}" 
-              class="portfolio-image"
-            >
-          </div>
+  ${iconeHTML}
+
+  <img 
+    src="${projeto.imagem}" 
+    alt="Imagem do projeto ${projeto.titulo}" 
+    class="portfolio-image"
+  >
+</div>
 
           <div class="portfolio-front-content">
             <p class="portfolio-categoria">${projeto.categoria}</p>
