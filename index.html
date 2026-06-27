@@ -234,24 +234,34 @@
         apresentações em eventos e projetos web desenvolvidos ao longo da minha trajetória.
       </p>
 
-      <div class="portfolio-filtro">
-        <label for="portfolio-filtro-select">
-          Escolha o tipo de trabalho:
-        </label>
+      <div class="portfolio-controles">
 
-        <select id="portfolio-filtro-select">
-          <option value="todos">Todos os trabalhos</option>
-          <option value="producoes">Produções acadêmicas</option>
-          <option value="projetos-web">Projetos web</option>
-          <option value="eventos">Apresentações e eventos</option>
-          <option value="consultorias">Consultorias e relatórios</option>
-          <option value="educacionais">Projetos educacionais</option>
-        </select>
+        <div class="portfolio-filtro">
+          <label for="portfolio-filtro-select">
+            Escolha o tipo de trabalho:
+          </label>
+
+          <select id="portfolio-filtro-select">
+            <option value="todos" selected>Todos os trabalhos</option>
+            <option value="producoes">Produções acadêmicas</option>
+            <option value="projetos-web">Projetos web</option>
+            <option value="eventos">Apresentações e eventos</option>
+            <option value="consultorias">Consultorias e relatórios</option>
+            <option value="educacionais">Projetos educacionais</option>
+          </select>
+        </div>
+
+        <p class="portfolio-aviso">
+          Arraste para o lado para visualizar mais projetos.
+        </p>
+
       </div>
 
-      <p class="portfolio-aviso">
-        Arraste para o lado para visualizar mais projetos.
-      </p>
+      <div class="cards-grid" id="portfolio-container">
+        <!-- Os projetos serão carregados pelo JavaScript -->
+      </div>
+
+
     </div>
 
     <!-- Serviços -->
