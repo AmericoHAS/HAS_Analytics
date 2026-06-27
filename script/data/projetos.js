@@ -4,22 +4,7 @@
 // ======================================================
 
 window.PROJETOS = [
-  {
-    titulo: "Modelo espacial de captura com remoção para dengue",
-    categoria: "Bioestatística | Epidemiologia",
-    data: "2024",
-    status: "Dissertação de mestrado",
-    tipo: "Pesquisa acadêmica",
-    imagem: "assets/img/portfolio/dengue.png",
-    descricao:
-      "Pesquisa voltada à estimação de casos não notificados de dengue no Paraná, utilizando modelos de captura com remoção, modelos N-mixture e abordagens hierárquicas aplicadas à epidemiologia.",
-    detalhes:
-      "O trabalho envolveu organização de dados epidemiológicos, análise espacial, modelagem estatística e discussão sobre subnotificação em saúde pública.",
-    tecnologias: ["R", "Bioestatística", "Epidemiologia", "Modelagem hierárquica"],
-    link: "https://github.com/AmericoHAS",
-    textoLink: "Acessar material"
-  },
-
+  
   {
     titulo: "Modelagem de gases ruminais in vitro",
     categoria: "Modelos não lineares | Estatística Aplicada",
@@ -35,6 +20,35 @@ window.PROJETOS = [
     link: "https://github.com/AmericoHAS",
     textoLink: "Acessar material"
   },
+
+  {
+  titulo: "Educação em saúde: cuidados para a redução de riscos de complicações em pessoas com diabetes tipo 1 e 2 em uso de insulina",
+  categoria: "Saúde Pública | Educação em Saúde",
+  grupo: "producoes",
+  data: "2024",
+  status: "Artigo científico publicado",
+  tipo: "Artigo",
+
+  imagem: "assets/img/portfolio/ligiane.png",
+  seloImagem: "assets/img/ligiane-fundo.png",
+
+  descricao:
+    "Artigo voltado à avaliação de condições clínicas e à aplicação de ações educativas direcionadas ao cuidado preventivo de complicações em pessoas com diabetes mellitus tipo 1 e 2 em uso de insulina.",
+
+  detalhes:
+    "O estudo foi desenvolvido com participantes atendidos na farmácia da UBS de Itaúna do Sul – PR, envolvendo avaliação clínica, entrevistas sobre qualidade de vida e ações coletivas de educação em saúde. Os resultados indicaram melhora em aspectos relacionados à glicemia, limitação física, dor e saúde mental, reforçando a importância de intervenções educativas no cuidado ao diabetes.",
+
+  tecnologias: [
+    "Educação em saúde",
+    "Diabetes mellitus",
+    "Saúde pública",
+    "Análise estatística",
+    "Intervenção em saúde"
+  ],
+
+  link: "https://doi.org/10.48075/rfc.v27i46.34294",
+  textoLink: "Acessar artigo"
+},
 
  {
   titulo: "Ajuste de modelos não lineares mistos à análise de degradabilidade ruminal in vitro",
