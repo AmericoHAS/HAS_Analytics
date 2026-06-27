@@ -1,12 +1,7 @@
 /* ======================================================
-   PORTFÓLIO
+   PORTFOLIO.CSS - HAS Analytics
+   Cards com imagem, dados e efeito flip
 ====================================================== */
-
-.section-portfolio {
-  background:
-    radial-gradient(circle at top right, rgba(56, 189, 248, 0.10), transparent 28%),
-    var(--bg-main);
-}
 
 .cards-grid {
   display: grid;
@@ -18,7 +13,7 @@
   overflow-x: auto;
   overflow-y: hidden;
 
-  padding-bottom: 18px;
+  padding-bottom: 20px;
 
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
@@ -42,17 +37,33 @@
   background: rgba(56, 189, 248, 0.75);
 }
 
-.portfolio-card {
+.portfolio-card-flip {
+  height: 520px;
   scroll-snap-align: start;
+
+  perspective: 1200px;
 }
 
-.portfolio-card {
-  min-height: 280px;
-  padding: 28px;
+.portfolio-card-inner {
+  width: 100%;
+  height: 100%;
+
+  position: relative;
+
+  transform-style: preserve-3d;
+  transition: transform 0.75s ease;
+}
+
+.portfolio-card-flip.virado .portfolio-card-inner {
+  transform: rotateY(180deg);
+}
+
+.portfolio-card-face {
+  position: absolute;
+  inset: 0;
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 
   background: linear-gradient(180deg, var(--bg-card-soft), var(--bg-card));
   border: 1px solid var(--border-soft);
@@ -60,42 +71,179 @@
 
   box-shadow: var(--shadow-card);
 
-  transition: 0.3s ease;
+  overflow: hidden;
+
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
-.portfolio-card:hover {
-  transform: translateY(-8px);
-  border-color: var(--border-blue);
+.portfolio-card-back {
+  transform: rotateY(180deg);
 }
 
-.portfolio-card h3 {
-  margin-bottom: 16px;
+.portfolio-image-box {
+  height: 190px;
+
+  background: rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid var(--border-soft);
+
+  overflow: hidden;
+}
+
+.portfolio-image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  display: block;
+
+  transition: 0.4s ease;
+}
+
+.portfolio-card-flip:hover .portfolio-image {
+  transform: scale(1.06);
+}
+
+.portfolio-front-content,
+.portfolio-back-content {
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+
+  flex: 1;
+}
+
+.portfolio-categoria {
+  margin-bottom: 10px;
+
+  color: var(--accent-blue);
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+}
+
+.portfolio-card-flip h3 {
+  margin-bottom: 12px;
 
   color: var(--text-main);
-  font-size: 1.12rem;
+  font-size: 1.08rem;
   line-height: 1.35;
 }
 
-.portfolio-card p {
-  margin-bottom: 20px;
+.portfolio-meta {
+  margin-bottom: 14px;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.portfolio-meta span {
+  padding: 5px 9px;
 
   color: var(--text-muted);
-  font-size: 0.94rem;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid var(--border-soft);
+  border-radius: 999px;
+
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.portfolio-card-flip p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.portfolio-status {
+  margin-bottom: 12px;
+
+  color: var(--accent-gold) !important;
+  font-size: 0.84rem !important;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+}
+
+.portfolio-tags {
+  margin-top: 18px;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.portfolio-tag {
+  padding: 6px 10px;
+
+  color: var(--text-soft);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-soft);
+  border-radius: 999px;
+
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.portfolio-flip-btn {
+  width: fit-content;
+
+  margin-top: auto;
+  padding: 10px 16px;
+
+  color: #020617;
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-blue-dark));
+  border: none;
+  border-radius: 999px;
+
+  font-size: 0.84rem;
+  font-weight: 800;
+
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.portfolio-flip-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(56, 189, 248, 0.25);
+}
+
+.portfolio-actions {
+  margin-top: auto;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .card-link {
-  width: fit-content;
+  padding: 10px 16px;
 
   color: var(--accent-blue);
-  font-size: 0.9rem;
+  border: 1px solid var(--border-blue);
+  border-radius: 999px;
+
+  font-size: 0.84rem;
   font-weight: 800;
 
   transition: 0.3s ease;
 }
 
 .card-link:hover {
-  color: var(--accent-gold);
+  color: #020617;
+  background: var(--accent-blue);
 }
+
+.portfolio-flip-btn.voltar {
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-soft);
+}
+
+/* Aviso de rolagem */
 .portfolio-aviso {
   margin-top: 18px;
   padding: 8px 14px;
@@ -121,40 +269,19 @@
   font-size: 1rem;
 }
 
-.portfolio-categoria {
-  margin-bottom: 10px;
-
-  color: var(--accent-blue);
-  font-size: 0.78rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.7px;
+/* Responsivo */
+@media (max-width: 1024px) {
+  .cards-grid {
+    grid-auto-columns: calc((100% - 22px) / 2);
+  }
 }
 
-.portfolio-status {
-  margin-bottom: 14px;
+@media (max-width: 640px) {
+  .cards-grid {
+    grid-auto-columns: 88%;
+  }
 
-  color: var(--accent-gold);
-  font-size: 0.84rem;
-  font-weight: 700;
-}
-
-.portfolio-tags {
-  margin-top: 18px;
-
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.portfolio-tag {
-  padding: 6px 10px;
-
-  color: var(--text-soft);
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border-soft);
-  border-radius: 999px;
-
-  font-size: 0.75rem;
-  font-weight: 600;
+  .portfolio-card-flip {
+    height: 540px;
+  }
 }
