@@ -109,7 +109,7 @@ window.PROJETOS = [
   status: "Capítulo de livro publicado",
   tipo: "Capítulo de livro",
 
-  imagem: "assets/img/portfolio/tcc2.png",
+  imagem: "assets/img/portfolio/tcc.png",
   seloImagem: "assets/img/portfolio/livro-tcc.png",
 
   descricao:
