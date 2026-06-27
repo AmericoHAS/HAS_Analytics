@@ -44,7 +44,7 @@ window.PROJETOS = [
   status: "Dissertação de mestrado",
   tipo: "Dissertação",
 
-  imagem: "assets/img/portfolio/degradabilidade-ruminal.png",
+  imagem: "assets/img/portfolio/dissertacao-fundo.png",
 
   descricao:
     "Dissertação voltada à aplicação de modelos não lineares mistos na análise de curvas de degradabilidade ruminal in vitro, considerando a estrutura longitudinal dos dados e a variabilidade entre unidades experimentais.",
@@ -71,7 +71,8 @@ window.PROJETOS = [
   data: "2026",
   status: "Projeto pessoal",
   tipo: "Site profissional",
-  imagem: "assets/img/portfolio/has-analytics.png",
+  imagem: "assets/img/portfolio/logo-has-fundo.png",
+  seloImagem: "assets/img/logo-has.png",
   descricao:
     "Site pessoal e profissional desenvolvido para apresentar projetos, serviços estatísticos, produções acadêmicas e formas de contato.",
   detalhes:
@@ -91,7 +92,8 @@ window.PROJETOS = [
     data: "2026",
     status: "Projeto educacional",
     tipo: "Projeto em desenvolvimento",
-    imagem: "assets/img/portfolio/real-math.png",
+    imagem: "assets/img/portfolio/real-math-fundo.png",
+    seloImagem: "assets/img/portfolio/real-math.png",
     descricao:
       "Projeto educacional voltado à criação de experiências matemáticas contextualizadas, com atividades por estações, tecnologia e resolução de problemas.",
     detalhes:
