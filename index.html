@@ -30,6 +30,7 @@
   <link rel="stylesheet" href="css/responsive.css">
 
   <!-- CSS das seções -->
+   <link rel="stylesheet" href="css/sections/portifolio.css">
   <link rel="stylesheet" href="css/sections/skills.css">
 </head>
 
@@ -211,6 +212,9 @@
             <li>Professor de Matemática</li>
             <li>Pesquisador em Estatística Aplicada</li>
             <li>Consultor em análise de dados acadêmicos</li>
+            <li>Pós Graduação em Matemática Financeira e Estatística</li>
+            <li>Pós Graduação em Ensino de Matemática e Física/li>
+            <li>Pós Graduação em Medotologia do Ensino de Matemática</li>
           </ul>
         </div>
 
@@ -223,7 +227,7 @@
 
         <div class="section-header">
           <p class="section-tag">Portfólio</p>
-          
+
 
 
           <h2>
@@ -240,47 +244,11 @@
             Arraste para o lado para visualizar mais projetos.
           </p>
 
-          
+
         </div>
 
-        <div class="cards-grid">
-
-          <article class="portfolio-card">
-            <h3>Modelo espacial de captura com remoção para dengue</h3>
-            <p>
-              Pesquisa voltada à estimação de casos não notificados de dengue, com uso de
-              modelos de captura, remoção e abordagens hierárquicas aplicadas à epidemiologia.
-            </p>
-            <a href="#" class="card-link">Em breve</a>
-          </article>
-
-          <article class="portfolio-card">
-            <h3>Modelagem de gases ruminais</h3>
-            <p>
-              Aplicação de modelos não lineares e estruturas de correlação para análise de
-              produção de gases ruminais em experimentos in vitro.
-            </p>
-            <a href="#" class="card-link">Em breve</a>
-          </article>
-
-          <article class="portfolio-card">
-            <h3>Avaliação do aplicativo Passando Plantão</h3>
-            <p>
-              Apoio estatístico em pesquisa aplicada à área da saúde, com análise de questionários,
-              escalas, aceitação, usabilidade e interpretação dos resultados.
-            </p>
-            <a href="#" class="card-link">Em breve</a>
-          </article>
-
-          <article class="portfolio-card">
-            <h3>Projeto educacional Real Math</h3>
-            <p>
-              Projeto educacional voltado à criação de experiências matemáticas contextualizadas,
-              com atividades por estações, tecnologia e resolução de problemas.
-            </p>
-            <a href="#" class="card-link">Em breve</a>
-          </article>
-
+        <div class="cards-grid" id="portfolio-container">
+          <!-- Os projetos serão carregados pelo JavaScript -->
         </div>
 
       </div>
@@ -439,7 +407,7 @@
               </div>
             </div>
           </div>
-          
+
           <!-- Grupo 3 -->
           <div class="skill-progress-card">
             <h3>Relatórios e escrita científica</h3>
@@ -758,11 +726,15 @@
   </footer>
 
   <!-- JavaScript -->
-  <script src="scripts/config/config-geral.js" defer></script>
-  <script src="scripts/core/menu.js" defer></script>
-  <script src="scripts/core/scroll.js" defer></script>
-  <script src="scripts/pages/home.js" defer></script>
-  <script src="scripts/sections/skills.js" defer></script>
+<script src="script/config/config-geral.js" defer></script>
+<script src="script/core/menu.js" defer></script>
+<script src="script/core/scroll.js" defer></script>
+
+<script src="script/data/projetos.js" defer></script>
+
+<script src="script/pages/home.js" defer></script>
+<script src="script/pages/skills.js" defer></script>
+<script src="script/pages/portfolio.js" defer></script>
 
 </body>
 
