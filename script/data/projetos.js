@@ -13,7 +13,7 @@ window.PROJETOS = [
   status: "Manuscrito em submissão",
   tipo: "Artigo científico",
 
-  imagem: "assets/img/portfolio/dissertacao-ruminal.png",
+  imagem: "assets/img/portfolio/dissertacao-fundo.png",
 
   descricao:
     "Produção acadêmica derivada da dissertação de mestrado, voltada à aplicação de modelos estatísticos em dados experimentais de degradabilidade ruminal in vitro.",
@@ -167,7 +167,7 @@ window.PROJETOS = [
   status: "Estudo em desenvolvimento",
   tipo: "Pesquisa em parceria",
 
-  imagem: "assets/img/portfolio/metais-hortalicas.png",
+  imagem: "assets/img/portfolio/desenvolvimento.png",
 
   descricao:
     "Pesquisa em parceria voltada à aplicação de métodos estatísticos na análise de dados relacionados à presença de metais em hortaliças, com foco na organização, exploração e interpretação dos resultados.",
