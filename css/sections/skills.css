@@ -104,19 +104,24 @@
   height: 100%;
 
   position: relative;
-  z-index: 1;
+  z-index: 2;
 
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--accent-blue), var(--accent-gold));
 
-  box-shadow: 0 0 14px rgba(56, 189, 248, 0.45);
+  background: linear-gradient(
+    90deg,
+    var(--accent-blue),
+    var(--accent-gold)
+  );
+
+  box-shadow:
+    0 0 12px rgba(56, 189, 248, 0.45),
+    0 0 18px rgba(212, 175, 55, 0.25);
 
   transition: width 1.8s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.section-skills.skills-ativa .skill-fill {
-  width: var(--skill-width);
-}
+
 
 @keyframes brilhoBarra {
   0% {
@@ -200,3 +205,4 @@
   color: var(--accent-gold);
   transform: scale(1.15) rotate(-4deg);
 }
+
