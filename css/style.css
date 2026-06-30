@@ -1081,6 +1081,33 @@ section {
   cursor: pointer;
 }
 
+.form-subtitle {
+  margin-top: 10px;
+  margin-bottom: 4px;
+
+  padding: 18px 20px;
+
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-medium);
+}
+
+.form-subtitle h3 {
+  margin-bottom: 6px;
+
+  color: var(--accent-blue);
+  font-family: "Sora", "Inter", Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+}
+
+.form-subtitle p {
+  margin: 0;
+
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
 /* ======================================================
    CONTATO
 ====================================================== */

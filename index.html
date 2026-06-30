@@ -16,8 +16,8 @@
   <meta name="author" content="Prof. Me. Haward Antunny S. Américo">
 
   <title>HAS Analytics | Prof. Me. Haward Antunny S. Américo</title>
- <link rel="icon" type="image/png" href="assets/img/logo-has.png">
- <link rel="apple-touch-icon" href="assets/img/logo-has.png">
+  <link rel="icon" type="image/png" href="assets/img/logo-has.png">
+  <link rel="apple-touch-icon" href="assets/img/logo-has.png">
   <!-- Fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -225,7 +225,7 @@
       </div>
     </section>
 
-   
+
     <!-- Portfólio -->
     <section class="section section-portfolio" id="portfolio">
       <div class="container">
@@ -619,8 +619,8 @@
           </p>
 
           <p>
-            Em breve, este formulário será integrado ao Google Sheets para registrar
-            automaticamente as solicitações de orçamento.
+            Algumas informações adicionais ajudam a compreender a complexidade da demanda
+            e permitem elaborar uma estimativa mais adequada de prazo e orçamento.
           </p>
         </div>
 
@@ -662,6 +662,59 @@
           <div class="form-group">
             <label for="area">Área da pesquisa</label>
             <input type="text" id="area" name="area" placeholder="Ex: Saúde, Educação, Agrárias...">
+          </div>
+
+          <div class="form-group form-group-full">
+            <div class="form-subtitle">
+              <h3>Informações para estimativa do orçamento</h3>
+              <p>
+                Esses campos ajudam a compreender melhor a complexidade da análise solicitada.
+              </p>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="banco-dados">Situação do banco de dados</label>
+            <select id="banco-dados" name="banco-dados">
+              <option value="">Selecione uma opção</option>
+              <option value="limpo">Banco limpo e organizado</option>
+              <option value="ajustavel">Banco ajustável, com pequenos ajustes</option>
+              <option value="medio">Banco com organização intermediária</option>
+              <option value="grande">Banco grande ou com muitas variáveis</option>
+              <option value="baguncado">Banco bagunçado ou com muitos problemas</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="urgencia">Urgência da demanda</label>
+            <select id="urgencia" name="urgencia">
+              <option value="">Selecione uma opção</option>
+              <option value="normal">Prazo normal</option>
+              <option value="curto">Prazo curto</option>
+              <option value="muito-urgente">Muito urgente</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="responsabilidade">Finalidade do trabalho</label>
+            <select id="responsabilidade" name="responsabilidade">
+              <option value="">Selecione uma opção</option>
+              <option value="trabalho">Trabalho acadêmico ou atividade</option>
+              <option value="tcc">TCC</option>
+              <option value="artigo">Artigo científico</option>
+              <option value="dissertacao">Dissertação</option>
+              <option value="tese">Tese</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="modelo-entrega">Modelo de entrega esperado</label>
+            <select id="modelo-entrega" name="modelo-entrega">
+              <option value="">Selecione uma opção</option>
+              <option value="apenas-dados">Apenas análise dos dados</option>
+              <option value="dados-imagens">Análise dos dados com tabelas e gráficos</option>
+              <option value="artigo">Apoio na estruturação para artigo ou texto acadêmico</option>
+            </select>
           </div>
 
           <div class="form-group form-group-full">

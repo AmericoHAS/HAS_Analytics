@@ -41,6 +41,11 @@ function aplicarEfeitoHeader() {
 
 function validarFormularioOrcamento() {
   const formulario = document.getElementById("form-orcamento");
+  const bancoDados = document.getElementById("banco-dados");
+  const urgencia = document.getElementById("urgencia");
+  const responsabilidade = document.getElementById("responsabilidade");
+  const modeloEntrega = document.getElementById("modelo-entrega");
+
 
   if (!formulario) {
     console.error("Formulário de orçamento não encontrado.");
@@ -90,7 +95,21 @@ function validarFormularioOrcamento() {
     const numeroHaward = "5544999554888";
 
     const tipoServicoTexto = tipoServico.options[tipoServico.selectedIndex].text;
+    const bancoDadosTexto = bancoDados && bancoDados.value
+      ? bancoDados.options[bancoDados.selectedIndex].text
+      : "Não informado";
 
+    const urgenciaTexto = urgencia && urgencia.value
+      ? urgencia.options[urgencia.selectedIndex].text
+      : "Não informada";
+
+    const responsabilidadeTexto = responsabilidade && responsabilidade.value
+      ? responsabilidade.options[responsabilidade.selectedIndex].text
+      : "Não informada";
+
+    const modeloEntregaTexto = modeloEntrega && modeloEntrega.value
+      ? modeloEntrega.options[modeloEntrega.selectedIndex].text
+      : "Não informado";
     const mensagem = `
 Olá, Haward! Gostaria de solicitar um orçamento pela HAS Analytics.
 
@@ -102,9 +121,15 @@ Tipo de serviço: ${tipoServicoTexto}
 Prazo desejado: ${prazo.value.trim() || "Não informado"}
 Área da pesquisa: ${area.value.trim() || "Não informada"}
 
+Informações para estimativa:
+Situação do banco de dados: ${bancoDadosTexto}
+Urgência da demanda: ${urgenciaTexto}
+Finalidade do trabalho: ${responsabilidadeTexto}
+Modelo de entrega esperado: ${modeloEntregaTexto}
+
 Descrição da demanda:
 ${descricao.value.trim()}
-    `;
+`;
 
     const mensagemCodificada = encodeURIComponent(mensagem);
 
