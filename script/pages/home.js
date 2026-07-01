@@ -145,7 +145,7 @@ ${dadosSolicitacao.descricao}
     const mensagemCodificada = encodeURIComponent(mensagem);
     const linkWhatsApp = `https://wa.me/${numeroHaward}?text=${mensagemCodificada}`;
 
-    try {
+       try {
       await salvarSolicitacaoNaPlanilha(dadosSolicitacao);
       console.log("Solicitação enviada para a planilha.");
     } catch (erro) {
