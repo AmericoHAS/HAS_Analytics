@@ -2,6 +2,7 @@
 // HOME - HAS Analytics
 // Página única do site
 // ======================================================
+const URL_PLANILHA_ORCAMENTOS = "https://script.google.com/macros/s/AKfycbwFuSSuV7JF14AnB3Tgx6MWolZ6fiElef3UPWL92F-T0VVTbn2jxsLBS1t7XfkhPLQKvw/exec";
 
 document.addEventListener("DOMContentLoaded", function () {
   console.log("HAS Analytics carregado com sucesso.");
@@ -41,18 +42,13 @@ function aplicarEfeitoHeader() {
 
 function validarFormularioOrcamento() {
   const formulario = document.getElementById("form-orcamento");
-  const bancoDados = document.getElementById("banco-dados");
-  const urgencia = document.getElementById("urgencia");
-  const responsabilidade = document.getElementById("responsabilidade");
-  const modeloEntrega = document.getElementById("modelo-entrega");
-
 
   if (!formulario) {
     console.error("Formulário de orçamento não encontrado.");
     return;
   }
 
-  formulario.addEventListener("submit", function (event) {
+  formulario.addEventListener("submit", async function (event) {
     event.preventDefault();
 
     const nome = document.getElementById("nome");
@@ -62,6 +58,11 @@ function validarFormularioOrcamento() {
     const prazo = document.getElementById("prazo");
     const area = document.getElementById("area");
     const descricao = document.getElementById("descricao");
+
+    const bancoDados = document.getElementById("banco-dados");
+    const urgencia = document.getElementById("urgencia");
+    const responsabilidade = document.getElementById("responsabilidade");
+    const modeloEntrega = document.getElementById("modelo-entrega");
 
     const camposObrigatorios = [
       nome,
@@ -90,53 +91,68 @@ function validarFormularioOrcamento() {
       return;
     }
 
-    // Seu número no formato: 55 + DDD + número
-    // Sem espaço, sem traço e sem parênteses
+    const dadosSolicitacao = {
+      nome: nome.value.trim(),
+      email: email.value.trim(),
+      whatsapp: whatsapp.value.trim(),
+
+      tipoServico: tipoServico.options[tipoServico.selectedIndex].text,
+      prazoDesejado: prazo.value.trim() || "Não informado",
+      areaPesquisa: area.value.trim() || "Não informada",
+
+      bancoDados: bancoDados && bancoDados.value
+        ? bancoDados.options[bancoDados.selectedIndex].text
+        : "Não informado",
+
+      urgencia: urgencia && urgencia.value
+        ? urgencia.options[urgencia.selectedIndex].text
+        : "Não informada",
+
+      responsabilidade: responsabilidade && responsabilidade.value
+        ? responsabilidade.options[responsabilidade.selectedIndex].text
+        : "Não informada",
+
+      modeloEntrega: modeloEntrega && modeloEntrega.value
+        ? modeloEntrega.options[modeloEntrega.selectedIndex].text
+        : "Não informado",
+
+      descricao: descricao.value.trim()
+    };
+
     const numeroHaward = "5544999554888";
 
-    const tipoServicoTexto = tipoServico.options[tipoServico.selectedIndex].text;
-    const bancoDadosTexto = bancoDados && bancoDados.value
-      ? bancoDados.options[bancoDados.selectedIndex].text
-      : "Não informado";
-
-    const urgenciaTexto = urgencia && urgencia.value
-      ? urgencia.options[urgencia.selectedIndex].text
-      : "Não informada";
-
-    const responsabilidadeTexto = responsabilidade && responsabilidade.value
-      ? responsabilidade.options[responsabilidade.selectedIndex].text
-      : "Não informada";
-
-    const modeloEntregaTexto = modeloEntrega && modeloEntrega.value
-      ? modeloEntrega.options[modeloEntrega.selectedIndex].text
-      : "Não informado";
     const mensagem = `
 Olá, Haward! Gostaria de solicitar um orçamento pela HAS Analytics.
 
-Nome: ${nome.value.trim()}
-E-mail: ${email.value.trim()}
-WhatsApp: ${whatsapp.value.trim()}
+Nome: ${dadosSolicitacao.nome}
+E-mail: ${dadosSolicitacao.email}
+WhatsApp: ${dadosSolicitacao.whatsapp}
 
-Tipo de serviço: ${tipoServicoTexto}
-Prazo desejado: ${prazo.value.trim() || "Não informado"}
-Área da pesquisa: ${area.value.trim() || "Não informada"}
+Tipo de serviço: ${dadosSolicitacao.tipoServico}
+Prazo desejado: ${dadosSolicitacao.prazoDesejado}
+Área da pesquisa: ${dadosSolicitacao.areaPesquisa}
 
 Informações para estimativa:
-Situação do banco de dados: ${bancoDadosTexto}
-Urgência da demanda: ${urgenciaTexto}
-Finalidade do trabalho: ${responsabilidadeTexto}
-Modelo de entrega esperado: ${modeloEntregaTexto}
+Situação do banco de dados: ${dadosSolicitacao.bancoDados}
+Urgência da demanda: ${dadosSolicitacao.urgencia}
+Finalidade do trabalho: ${dadosSolicitacao.responsabilidade}
+Modelo de entrega esperado: ${dadosSolicitacao.modeloEntrega}
 
 Descrição da demanda:
-${descricao.value.trim()}
+${dadosSolicitacao.descricao}
 `;
 
     const mensagemCodificada = encodeURIComponent(mensagem);
-
     const linkWhatsApp = `https://wa.me/${numeroHaward}?text=${mensagemCodificada}`;
 
-    console.log("Abrindo WhatsApp:", linkWhatsApp);
+    try {
+      await salvarSolicitacaoNaPlanilha(dadosSolicitacao);
+      console.log("Solicitação enviada para a planilha.");
+    } catch (erro) {
+      console.warn("Não foi possível salvar na planilha, mas o WhatsApp será aberto:", erro);
+    }
 
+    console.log("Abrindo WhatsApp:", linkWhatsApp);
     window.location.href = linkWhatsApp;
   });
 }
@@ -214,5 +230,27 @@ function ativarLogoVideo() {
 
   videoLogo.addEventListener("ended", function () {
     pararVideo();
+  });
+}
+
+// ------------------------------------------------------
+// Envia solicitação para a planilha de orçamentos
+// ------------------------------------------------------
+
+async function salvarSolicitacaoNaPlanilha(dados) {
+  if (!URL_PLANILHA_ORCAMENTOS || URL_PLANILHA_ORCAMENTOS.includes("COLE_AQUI")) {
+    console.warn("URL da planilha de orçamentos não configurada.");
+    return;
+  }
+
+  const corpo = new URLSearchParams(dados);
+
+  await fetch(URL_PLANILHA_ORCAMENTOS, {
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+    },
+    body: corpo
   });
 }
